@@ -1,0 +1,64 @@
+<section>
+   
+   
+   
+   
+   
+   
+   
+   
+        
+        <table class="table mt-5" id="datatable">
+  <thead>
+    <tr>
+      <th scope="col">No.</th>
+      <th scope="col">Bill No.</th>
+      <th scope="col">Date</th>
+      <th scope="col">College</th>
+      <th scope="col">Bill Type</th>
+      <th scope="col">Gross</th>
+      <th scope="col">Net</th>
+      <th>Option</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    {{#each forms}}
+    <tr>
+      <td scope="row"></td>
+      <td>{{this.billno}}</td>
+      <td>{{this.date}}</td>
+      <td>{{this.college}}</td>
+      <td>{{this.billtype}}</td>
+      <td>{{this.gross}}</td>
+      <td>{{this.net}}</td>
+      <td>
+        <a href="/edit-form/{{this._id}}" class="btn btn-primary">Edit</a>
+        <a href="/delete-form/{{this._id}}" class="btn btn-danger" onclick="return confirm('Are you sure to delete {{this.college}}?')">Delete</a>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+   
+</section>
+<script>
+  $(document).ready( function () {
+    $('#datatable').DataTable();
+  } );
+</script>
+
+<style>
+  body {
+    counter-reset: Count-Value;
+  }
+
+  table {
+    border-collapse: separate;
+  }
+
+  tr td:first-child:before {
+    counter-increment: Count-Value;
+    content: counter(Count-Value);
+  }
+</style>

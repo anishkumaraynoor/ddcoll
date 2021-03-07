@@ -1,0 +1,23 @@
+
+
+
+
+
+
+
+<section>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="text-center">Edit College</h2>
+                <form action="/admin/edit-college/{{college._id}}" method="POST">
+                    <label for="">Name of College</label>
+                    <input type="text" name="college" value="{{college.college}}" class="form-control">
+                    <label for="">Name of Treasury</label>
+                    <input type="text" name="treasury" value="{{college.treasury}}" class="form-control">
+                    <button type="submit" class="btn btn-success mt-4" >Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

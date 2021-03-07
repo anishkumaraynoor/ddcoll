@@ -1,0 +1,149 @@
+    <section>
+        <div class="container mt-3">
+
+
+
+
+
+
+            <div class="row mt-4">
+            <a href="/view-forms" class="btn btn-success ml-auto">View Form</a>
+        </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <form action="/edit-form/{{form._id}}" method="POST" name="form">
+
+                        <div class="form-group row">
+                            <label for="colFormLabel" class="col-sm-2 col-form-label">Bill No.</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="colFormLabel" placeholder="" name="billno" value="{{form.billno}}">
+                            </div>
+                            <label for="colFormLabel" class="col-sm-2 col-form-label">Date</label>
+                            <div class="col-sm-4">
+                                <input type="date" class="form-control" id="colFormLabel" placeholder="" name="date" value="{{form.date}}">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">Bill Type</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="" name="billtype" value="{{form.billtype}}">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">TS/NTS</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="" name="staff" value="{{form.staff}}">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">College</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="" name="college" value="{{form.college}}">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">Period</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="" name="period" value="{{form.period}}">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">Net</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="" name="net" value="{{form.net}}">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">Pay</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="" name="pay" value="{{form.pay}}">
+                            </div>
+                            <label for="" class="col-sm-2 col-form-label">AGP</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="" name="agp" value="{{form.agp}}">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">DA</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="" name="da" value="{{form.da}}">
+                            </div>
+                            <label for="" class="col-sm-2 col-form-label">HRA</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="" name="hra" value="{{form.hra}}">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">CCA</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="" name="cca" value="{{form.cca}}">
+                            </div>
+                            <label for="" class="col-sm-2 col-form-label">Splallow</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="" name="splallow" value="{{form.splallow}}">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">Splls</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="" name="splls" value="{{form.splls}}">
+                            </div>
+                            <label for="" class="col-sm-2 col-form-label">Gross</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="gross" name="gross" value="{{form.gross}}">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">A/c</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="account" name="account" value="{{form.account}}">
+                            </div>
+                            <label for="" class="col-sm-2 col-form-label">Treasury</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="treasury" name="treasury" value="{{form.treasury}}">
+                            </div>
+                        </div>
+
+                        <a onclick="Add()" class="btn btn-success" id="">OK</a>
+                        <button type="submit" class="btn btn-primary" >SAVE</button>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        function Add(){
+            var pay = document.form.pay.value;
+            if(!pay){pay = 0;}
+            var agp = document.form.agp.value;
+            if(!agp){agp = 0;}
+            var da = document.form.da.value;
+            if(!da){da = 0;}
+            var hra = document.form.hra.value;
+            if(!hra){hra = 0;}
+            var cca = document.form.cca.value;
+            if(!cca){cca = 0;}
+            var splallow = document.form.splallow.value;
+            if(!splallow){splallow = 0;}
+            var splls = document.form.splls.value;
+            if(!splls){splls = 0;}
+            var total = pay+"+"+agp+"+"+da+"+"+hra+"+"+cca+"+"+splallow+"+"+splls;
+            document.form.gross.value = eval(total);
+        }
+          
+    </script>
+   
+
+    

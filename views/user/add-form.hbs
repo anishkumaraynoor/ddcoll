@@ -1,0 +1,168 @@
+    <section>
+        <div class="container">
+        <div class="row mt-4">
+
+
+
+
+
+
+            <a href="/view-forms" class="btn btn-success ml-auto">View Form</a>
+        </div>
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-md-6">
+                    <form action="/add-form" method="POST" name="form">
+
+                        <div class="form-group row">
+                            <label for="colFormLabel" class="col-sm-2 col-form-label">Bill No.</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="colFormLabel" placeholder="" name="billno">
+                            </div>
+                            <label for="colFormLabel" class="col-sm-2 col-form-label">Date</label>
+                            <div class="col-sm-4">
+                                <input type="date" class="form-control" id="colFormLabel" placeholder="" name="date">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="colFormLabel" class="col-sm-2 col-form-label">Bill Type</label>
+                            <div class="col-sm-10">
+                                <select class="form-control" id="billtype" name="billtype">
+                                {{#each billtypes}}
+                                <option id="{{this.headofaccount}}" value="{{this.billtype}}">{{this.billtype}}</option>
+                                {{/each}}
+                            </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="colFormLabel" class="col-sm-2 col-form-label">TS/NTS</label>
+                            <div class="col-sm-10">
+                                <select class="form-control" id="exampleFormControlSelect1" name="staff">
+                                <option>TS</option>
+                                <option>NTS</option>
+                            </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="colFormLabel" class="col-sm-2 col-form-label">College</label>
+                            <div class="col-sm-10">
+                                <select class="form-control" id="college" name="college">
+                                {{#each colleges}}
+                                <option id="{{this.treasury}}" value="{{this.college}}">{{this.college}}</option>
+                                {{/each}}
+                            </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">Period</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="" name="period">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">Net</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="" name="net">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">Pay</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="" name="pay">
+                            </div>
+                            <label for="" class="col-sm-2 col-form-label">AGP</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="" name="agp">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">DA</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="" name="da">
+                            </div>
+                            <label for="" class="col-sm-2 col-form-label">HRA</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="" name="hra">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">CCA</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="" name="cca">
+                            </div>
+                            <label for="" class="col-sm-2 col-form-label">Splallow</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="" name="splallow">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">Splls</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="" name="splls">
+                            </div>
+                            <label for="" class="col-sm-2 col-form-label">Gross</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="gross" name="gross">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">A/c</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="account" name="account">
+                            </div>
+                            <label for="" class="col-sm-2 col-form-label">Treasury</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="treasury" name="treasury">
+                            </div>
+                        </div>
+
+                        <a onclick="Add()" class="btn btn-success" id="">OK</a>
+                        <button type="submit" class="btn btn-primary" >SAVE</button>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        function Add(){
+            var pay = document.form.pay.value;
+            if(!pay){pay = 0;}
+            var agp = document.form.agp.value;
+            if(!agp){agp = 0;}
+            var da = document.form.da.value;
+            if(!da){da = 0;}
+            var hra = document.form.hra.value;
+            if(!hra){hra = 0;}
+            var cca = document.form.cca.value;
+            if(!cca){cca = 0;}
+            var splallow = document.form.splallow.value;
+            if(!splallow){splallow = 0;}
+            var splls = document.form.splls.value;
+            if(!splls){splls = 0;}
+            var total = pay+"+"+agp+"+"+da+"+"+hra+"+"+cca+"+"+splallow+"+"+splls;
+            document.form.gross.value = eval(total);
+
+            var billsel = document.getElementById('billtype');
+            var billid = billsel.options[billsel.selectedIndex].id;
+            document.form.account.value = billid;
+
+            var collsel = document.getElementById('college');
+            var collegeid = collsel.options[collsel.selectedIndex].id;
+            document.form.treasury.value = collegeid;
+        }
+          
+    </script>
+   
+
+    

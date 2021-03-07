@@ -1,0 +1,57 @@
+<section>
+    <div class="container">
+        <div class="row mt-4">
+
+
+
+
+
+
+            <a href="/admin/add-billtype" class="btn btn-success ml-auto">Add Billtypes</a>
+        </div>
+        <table class="table mt-5" id="q">
+  <thead>
+    <tr>
+      <th scope="col">No.</th>
+      <th scope="col">Billtype</th>
+      <th scope="col">Head of Account</th>
+      <th>Options</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each billtypes}}
+    <tr>
+      <td scope="row"></td>
+      <td>{{this.billtype}}</td>
+      <td>{{this.headofaccount}}</td>
+      <td>
+        <a href="/admin/edit-billtype/{{this._id}}" class="btn btn-primary">Edit</a>
+        <a href="/admin/delete-billtype/{{this._id}}" class="btn btn-danger" onclick="return confirm('Are you sure to delete {{this.billtype}}?')">Delete</a>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+    </div>
+</section>
+<script>
+
+  $(document).ready( function () {
+    $('#q').DataTable();
+  } );
+</script>
+
+<style>
+  body {
+    counter-reset: Count-Value;
+  }
+
+  table {
+    border-collapse: separate;
+  }
+
+  tr td:first-child:before {
+    counter-increment: Count-Value;
+    content: counter(Count-Value);
+  }
+</style>

@@ -1,0 +1,23 @@
+
+
+
+
+
+
+
+<section>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="text-center">Edit Billtype</h2>
+                <form action="/admin/edit-billtype/{{billtype._id}}" method="POST">
+                    <label for="">Billtype</label>
+                    <input type="text" name="billtype" value="{{billtype.billtype}}" class="form-control">
+                    <label for="">Head of Account</label>
+                    <input type="text" name="headofaccount" value="{{billtype.headofaccount}}" class="form-control">
+                    <button type="submit" class="btn btn-success mt-4" >Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
