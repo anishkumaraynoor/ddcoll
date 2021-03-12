@@ -177,6 +177,7 @@ router.get('/signup', function (req, res) {
 router.post('/signup', function (req, res) {
   userHelpers.doSignup(req.body).then((response) => {
     console.log(response);
+    res.redirect('/');
   })
 })
 router.post('/login', (req, res) => {
