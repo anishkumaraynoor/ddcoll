@@ -1,0 +1,153 @@
+    <section>
+        <div class="container">
+        <div class="row mt-4">
+
+
+
+
+
+
+            <a href="/view-pensions" class="btn btn-success ml-auto">View Pension Form</a>
+        </div>
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-md-6">
+                    <form action="/add-pensionform" method="POST" name="form">
+
+                        <div class="form-group row">
+                            <label for="colFormLabel" class="col-sm-2 col-form-label">File No.</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="colFormLabel" placeholder="" name="fileno">
+                            </div>
+                            <label for="colFormLabel" class="col-sm-2 col-form-label">Date</label>
+                            <div class="col-sm-4">
+                                <input type="date" class="form-control" id="colFormLabel" placeholder="" name="date">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="colFormLabel" class="col-sm-2 col-form-label">TS/NTS</label>
+                            <div class="col-sm-10">
+                                <select class="form-control" id="exampleFormControlSelect1" name="staff">
+                                <option>TS</option>
+                                <option>NTS</option>
+                            </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="colFormLabel" class="col-sm-2 col-form-label">College</label>
+                            <div class="col-sm-10">
+                                <select class="form-control" id="college" name="college">
+                                {{#each colleges}}
+                                <option id="{{this.treasury}}" value="{{this.college}}">{{this.college}}</option>
+                                {{/each}}
+                            </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">Name</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="" name="name">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">Designation</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="" name="designation">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">House</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="" name="house">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">Place</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="" name="place">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">Post</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="" name="post">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">District</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="" name="district">
+                            </div>
+                            <label for="" class="col-sm-2 col-form-label">Pin</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="" name="pin">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">DOJ</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="" name="joining">
+                            </div>
+                            <label for="" class="col-sm-2 col-form-label">DOR</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="" name="retirement">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">Lr No</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="" name="lrno">
+                            </div>
+                            <label for="" class="col-sm-2 col-form-label">Lr Date</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="" name="lrdate">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">Col No</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="" name="colno">
+                            </div>
+                            <label for="" class="col-sm-2 col-form-label">Col Date</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="" name="coldate">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">Treasury</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="treasury" name="treasury">
+                            </div>
+                        </div>
+
+                        <a onclick="Add()" class="btn btn-success" id="">OK</a>
+                        <button type="submit" class="btn btn-primary" >SAVE</button>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        function Add(){
+            var collsel = document.getElementById('college');
+            var collegeid = collsel.options[collsel.selectedIndex].id;
+            document.form.treasury.value = collegeid;
+        }
+          
+    </script>
+   
+
+    
