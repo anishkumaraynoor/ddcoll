@@ -145,4 +145,15 @@ router.post('/edit-pension/:id', async (req, res) => {
   })
 })
 
+router.get('/add-els', function (req, res, next) {
+  let user = req.session.user;
+  res.render('user/add-els', { user });
+})
+
+router.get('/add-ugcpr', function (req, res, next) {
+  let user = req.session.user;
+  res.render('user/add-ugcpr', { user });
+})
+
+
 module.exports = router;

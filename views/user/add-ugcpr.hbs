@@ -1,0 +1,79 @@
+    <section>
+        <div class="container">
+        
+
+
+
+
+
+
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-md-6">
+                    <div>
+                        <h2 class="text-center mt-5 mb-5">UGC Pay Revision</h2>
+                    </div>
+                    
+                    <form action="" method="" name="form">
+
+                        <div class="form-group row">
+                            <label for="colFormLabel" class="col-sm-2 col-form-label">Pay</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="pay" placeholder="" name="pay">
+                            </div>
+                            <label for="colFormLabel" class="col-sm-2 col-form-label">AGP</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="agp" placeholder="" name="agp">
+                            </div>
+                        </div>
+
+                        <a onclick="Add()" class="btn btn-success" id="">OK</a>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">Revised Pay</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="revpay" name="revpay">
+                            </div>
+                        </div>                   
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        function Add(){
+
+            var pay = document.form.pay.value;
+            var agp = document.form.agp.value;
+            
+            var num1 = eval(pay+"+"+agp)*2.57;
+            
+            
+            if(agp==6000){
+                ep = 57700;
+            }else if(agp==7000){
+                ep = 68900;
+            }else if(agp==8000){
+                ep = 79800;
+            }else if(agp==9000){
+                ep = 131400;
+            }else if(agp==10000){
+                ep = 144200;
+            }else{
+                ep = 182200;
+            }
+            
+
+            for(;ep<num1;){
+                ep = Math.round(ep*103/10000)*100;                  
+            }
+
+            document.form.revpay.value = ep;
+            
+        }
+          
+    </script>
+   
+
+    
