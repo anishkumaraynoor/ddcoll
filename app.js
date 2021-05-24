@@ -1,3 +1,5 @@
+process.env.PWD = process.cwd()
+
 var createError = require('http-errors');
 
 
@@ -20,6 +22,7 @@ var app = express();
 var db = require('./config/connection');
 var session = require('express-session');
 // view engine setup
+app.use(express.static(process.env.PWD + '/public'));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 app.engine('hbs',hbs({extname:'hbs',defaultLayout:'layout',layoutsDir:__dirname+'/views/layout/',partialsDir:__dirname+'/views/partials/'}))

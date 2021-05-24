@@ -1,0 +1,247 @@
+    <section>
+        <div class="container">
+        
+            <div class="row mt-4">
+
+
+
+
+
+            <a href="/add-els" class="btn btn-success ml-auto">Simple</a>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div>
+                        <h2 class="text-center mb-4">ELS Calculator (Complex)</h2>
+                    </div>
+                    <form action="" method="" name="form">
+
+                        <div class="form-group row">
+                            <label for="colFormLabel" class="col-sm-2 col-form-label">OB Date</label>
+                            <div class="col-sm-4">
+                                <input type="date" class="form-control" id="obdate" placeholder="" name="obdate">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">OB Full</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="obfull" name="obfull">
+                            </div>
+                            <label for="" class="col-sm-2 col-form-label">Fraction</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="fraction" name="fraction">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="colFormLabel" class="col-sm-2 col-form-label">Event</label>
+                            <div class="col-sm-4">
+                                <select class="form-control" id="event" name="event" onchange="Select()">
+                                <option>Other Leaves</option>
+                                <option>Earned Leave</option>
+                                <option>EL Surrender</option>
+                            </select>
+                            </div>
+                                <label for="" class="col-sm-2 col-form-label">days</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="days" name="days">
+                            </div>
+
+
+
+                        </div>
+                        
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">From</label>
+                            <div class="col-sm-4">
+                                <input type="date" class="form-control" id="from" name="from">
+                            </div>
+                            <label for="" class="col-sm-2 col-form-label">To</label>
+                            <div class="col-sm-4">
+                                <input type="date" class="form-control" id="to" name="to">
+                            </div>
+                        </div>
+
+                        <a onclick="Add()" class="btn btn-success" id="add">OK</a>
+
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">CB Date</label>
+                            <div class="col-sm-4">
+                                <input type="date" class="form-control" id="cbdate" name="cbdate">
+                            </div>
+                            <label for="" class="col-sm-2 col-form-label">CB</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="cb" name="cb">
+                            </div>
+                        </div>
+
+                        <div class="form-group row invisible">
+                            <label for="" class="col-sm-2 col-form-label">CB Full</label>
+                            <div class="col-sm-4 invisible">
+                                <input type="text" class="form-control" id="cbfull" name="cbfull">
+                            </div>
+                            <label for="" class="col-sm-2 col-form-label">CBF</label>
+                            <div class="col-sm-4 invisible">
+                                <input type="text" class="form-control" id="cbf" name="cbf">
+                            </div>
+                        </div>
+
+
+                        <a onclick="Next()" class="btn btn-success" id="">Next</a>                     
+
+                        
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('days').readOnly = true;
+        document.getElementById('cbdate').readOnly = true;
+        document.getElementById('cb').readOnly = true;
+
+        function Add(){
+            
+            var datef = document.form.obdate.value;
+            var datet = document.form.to.value;
+            var fdate = new Date(datef);
+            var tdate = new Date(datet);
+        
+
+            var datefrom = document.form.from.value;
+            var dateto = document.form.to.value;
+            var fromdate = new Date(datefrom);
+            var todate = new Date(dateto);
+
+
+            var time_diffperiod = tdate.getTime() - fdate.getTime();
+            var perioddays = (time_diffperiod / (1000 * 60 * 60 * 24)+1);
+            if(document.form.event.value == "EL Surrender"){
+                var time_diffperiod = fromdate.getTime() - fdate.getTime();
+                var perioddays = (time_diffperiod / (1000 * 60 * 60 * 24));
+                }
+
+            
+
+            var time_diffleave = todate.getTime() - fromdate.getTime();
+            var leavedays = time_diffleave / (1000 * 60 * 60 * 24)+1;
+            if(document.form.event.value == "EL Surrender"){
+                leavedays = document.form.days.value;
+                }
+
+            
+
+            if(document.form.event.value == "Other Leaves"){
+                var ol = leavedays;
+                var el = 0;
+                var sur = 0;
+                }
+            if(document.form.event.value == "Earned Leave"){
+                var ol = 0;
+                var el = leavedays;
+                var sur = 0;
+                }
+            if(document.form.event.value == "EL Surrender"){
+                var ol = 0;
+                var el = 0;
+                var sur = leavedays;
+                }
+                   
+            var leave = ol+el;            
+            var debit = el+sur;         
+            var duty = perioddays-leave;
+            
+
+            var obfull = document.form.obfull.value;
+            if(!obfull){obfull = 0;}
+            var fraction = document.form.fraction.value;
+            if(!fraction){fraction = 0;}
+
+            var obdays = eval(obfull*11+"+"+fraction);
+            var cbdays = duty+obdays-debit*11;
+            var cbfull = (cbdays-cbdays%11)/11;
+            var cbf = cbdays%11;
+            var cb = cbfull+"  "+cbf+"/11";
+            
+            document.form.cb.value = cb;
+
+            if(document.form.event.value == "EL Surrender"){
+            var datesur = document.form.from.value;
+            var surdate = new Date(datesur);               
+            
+            surdate.setDate(surdate.getDate() - 1);
+            var dd = "0"+surdate.getDate();
+            var mm = "0"+(surdate.getMonth() + 1);
+            mm = mm.slice(-2);
+            dd = dd.slice(-2);
+            var yy = surdate.getFullYear();
+
+            var formatdate = yy + '-'+ mm + '-'+ dd;
+            document.form.cbdate.value = formatdate;
+
+            }else{
+                document.form.cbdate.value = dateto;
+            }
+            
+
+            document.form.cbfull.value = cbfull;
+            document.form.cbf.value = cbf;
+
+            document.getElementById('obdate').readOnly = true;
+            document.getElementById('obfull').readOnly = true;
+            document.getElementById('fraction').readOnly = true;
+
+
+            document.form.days.value = leavedays;
+
+            }
+
+
+
+        function Next(){
+            
+            var datecb = document.form.cbdate.value;
+            var cbdate = new Date(datecb);               
+            
+            cbdate.setDate(cbdate.getDate() + 1);
+            var dd = "0"+cbdate.getDate();
+            var mm = "0"+(cbdate.getMonth() + 1);
+            mm = mm.slice(-2);
+            dd = dd.slice(-2);
+            var yy = cbdate.getFullYear();
+
+            var formatteddate = yy + '-'+ mm + '-'+ dd;
+            document.form.obdate.value = formatteddate;
+
+            
+            document.form.obfull.value = document.form.cbfull.value;
+            document.form.fraction.value = document.form.cbf.value;
+
+            document.form.days.value = null;
+            document.form.from.value = null;
+            document.form.to.value = null;
+
+
+        }
+
+        function Select(){  
+            if(document.form.event.value == "EL Surrender"){
+                document.getElementById('to').readOnly = true;
+                document.getElementById('days').readOnly = false;
+            }else{
+                document.getElementById('to').readOnly = false;
+                document.getElementById('days').readOnly = true;    
+            }              
+                
+            }
+
+          
+    </script>
+   
+
+    

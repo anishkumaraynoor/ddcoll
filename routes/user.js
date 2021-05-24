@@ -150,9 +150,17 @@ router.get('/add-els', function (req, res, next) {
   res.render('user/add-els', { user });
 })
 
+router.get('/add-complex', function (req, res, next) {
+  let user = req.session.user;
+  res.render('user/add-complex', { user });
+})
+
 router.get('/add-ugcpr', function (req, res, next) {
   let user = req.session.user;
   res.render('user/add-ugcpr', { user });
+})
+router.get('/add-magazine', function (req, res, next) {
+  res.render('user/add-magazine');
 })
 
 
