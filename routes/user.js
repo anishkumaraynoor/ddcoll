@@ -162,6 +162,14 @@ router.get('/add-ugcpr', function (req, res, next) {
 router.get('/add-magazine', function (req, res, next) {
   res.render('user/add-magazine');
 })
+router.get('/add-index', function (req, res, next) {
+  res.render('user/add-index');
+})
+
+
+router.get('/ka', function (req, res, next) {
+  res.render('user/pages/ka');
+})
 
 
 module.exports = router;
