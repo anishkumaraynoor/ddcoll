@@ -7,6 +7,7 @@ const productHelpers = require('../helpers/product-helpers');
 const userHelpers = require('../helpers/user-helpers');
 const printHelpers = require('../helpers/print-helpers');
 const pensionHelpers = require('../helpers/pension-helpers');
+const arrearHelpers = require('../helpers/arrear-helpers');
 var router = express.Router();
 
 /* GET home page. */
@@ -159,17 +160,28 @@ router.get('/add-ugcpr', function (req, res, next) {
   let user = req.session.user;
   res.render('user/add-ugcpr', { user });
 })
-router.get('/add-magazine', function (req, res, next) {
-  res.render('user/add-magazine');
+router.get('/add-ugcprarrear', function (req, res, next) {
+  res.render('user/add-ugcprarrear');
 })
 router.get('/add-index', function (req, res, next) {
   res.render('user/add-index');
 })
+router.post('/view-arrear', (req, res) => {
+  arrearHelpers.arrearWork(req.body).then((grand) => {
+    var arrear = grand.items;
+    var total = grand.total;
+    res.render('user/view-arrear',{arrear,total});
+  })
+  
+  
+});
 
 
 router.get('/ka', function (req, res, next) {
   res.render('user/pages/ka');
 })
+
+
 
 
 module.exports = router;

@@ -1,0 +1,57 @@
+<section>
+    <div class="container">
+
+
+
+
+
+
+
+
+
+
+        <table class="table mt-5" id="datatable">
+            <thead>
+                <tr>
+                    <th scope="col">Month</th>
+                    <th scope="col">DuePay</th>
+                    <th scope="col">DueDA</th>
+                    <th scope="col">DrawnPay</th>
+                    <th scope="col">DrawnDA</th>
+                    <th scope="col">BalPay</th>
+                    <th scope="col">BalDA</th>
+                    <th scope="col">BalTotal</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each arrear}}
+                <tr>
+                    <td>{{this.month}}</td>
+                    <td>{{this.duepay}}</td>
+                    <td>{{this.dueda}}</td>
+                    <td>{{this.drawnpay}}</td>
+                    <td>{{this.drawnda}}</td>
+                    <td>{{this.balancepay}}</td>
+                    <td>{{this.balanceda}}</td>
+                    <td>{{this.balancetotal}}</td>
+                   
+                </tr>
+                {{/each}}
+                {{#each total}}
+                <tr class="font-weight-bold">
+                    <td>Total</td>
+                    <td>{{this.totalduepay}}</td>
+                    <td>{{this.totaldueda}}</td>
+                    <td>{{this.totaldrawnpay}}</td>
+                    <td>{{this.totaldrawnda}}</td>
+                    <td>{{this.totalbalancepay}}</td>
+                    <td>{{this.totalbalanceda}}</td>
+                    <td>{{this.totalbalancetotal}}</td>
+                   
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+
+</section>
