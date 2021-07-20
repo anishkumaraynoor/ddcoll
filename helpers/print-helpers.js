@@ -61,9 +61,9 @@ module.exports = {
     } catch (error) {
       errorHandler(error);
     }
-    if(body.net){
+    if (body.net) {
       var rupeewords = inWords(body.net);
-    }else{
+    } else {
       rupeewords = null;
     }
 
