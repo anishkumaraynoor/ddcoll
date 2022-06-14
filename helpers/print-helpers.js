@@ -81,7 +81,7 @@ module.exports = {
       rupeewords: rupeewords,
       stafffull: stafffull,
       fileno: body.fileno,
-      name: "ഡോ. രാജന്‍ കുരുവിള",
+      name: body.name,
       designation: body.designation,
       house: body.house,
       place: body.place,

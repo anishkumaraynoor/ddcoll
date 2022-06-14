@@ -6,7 +6,7 @@
     "start": "nodemon bin/www"
   },
   "dependencies": {
-    "@pdftron/pdfnet-node": "^8.1.0",
+    "@pdftron/pdfnet-node": "^9.0.0",
     "bcrypt": "^5.0.0",
     "cookie-parser": "~1.4.4",
     "datatables.net": "^1.10.23",
@@ -16,7 +16,7 @@
     "express": "^4.16.4",
     "express-handlebars": "^5.2.0",
     "express-session": "^1.17.1",
-    "hbs": "^4.1.1",
+    "hbs": "^4.1.2",
     "http-errors": "~1.6.3",
     "jquery": "^3.5.1",
     "moment": "^2.29.1",
