@@ -8,6 +8,8 @@ const userHelpers = require('../helpers/user-helpers');
 const printHelpers = require('../helpers/print-helpers');
 const pensionHelpers = require('../helpers/pension-helpers');
 const arrearHelpers = require('../helpers/arrear-helpers');
+const ntsarrearHelpers = require('../helpers/ntsarrear-helpers');
+const arrearsHelpers = require('../helpers/arrears-helpers')
 var router = express.Router();
 
 /* GET home page. */
@@ -60,6 +62,43 @@ router.get('/add-form', function (req, res, next) {
   })
 });
 
+router.get('/add-vimala', function(req, res, next) {
+    res.render('user/add-vimala');
+});
+
+router.post('/add-vimala',(req,res)=>{
+  console.log(req.body);
+  var collectname = collection.VIMALA_COLLECTION;
+  pensionHelpers.addItem(req.body,collectname,(id)=>{
+    res.render('user/add-vimala');
+  });
+});
+
+router.get('/view-vimala', function(req, res, next) {
+  var collectname = collection.VIMALA_COLLECTION;
+  pensionHelpers.getAllItems(collectname).then((vimala)=>{
+    res.render('user/view-vimala',{vimala});
+  })
+});
+
+router.get('/edit-vimala/:id', async (req, res) => {
+  var collectname = collection.VIMALA_COLLECTION;
+  let vimala = await pensionHelpers.getItemDetails(req.params.id,collectname);
+  res.render('user/edit-vimala', {vimala})
+});
+
+router.post('/edit-vimala/:id', async (req, res) => {
+  var collectname = collection.VIMALA_COLLECTION;
+  await pensionHelpers.updateItem(req.params.id,req.body,collectname).then(() => {
+    res.redirect('/view-vimala')
+  
+  })
+})
+
+
+
+
+
 router.post('/add-form', (req, res) => {
   var page = `../files/letter.docx`;
   var collectname = collection.FORM_COLLECTION;
@@ -72,7 +111,11 @@ router.get('/view-forms', function (req, res, next) {
   let user = req.session.user;
   var collectname = collection.FORM_COLLECTION;
   pensionHelpers.getAllItems(collectname).then((forms) => {
-    res.render('user/view-forms', { forms, user });
+    var totalgross = 0;
+    for (var i = 0; i < forms.length; i++){
+      totalgross = eval(totalgross + "+" + forms[i].gross);
+    }
+    res.render('user/view-forms', { forms, totalgross, user });
   })
 });
 router.get('/delete-form/:id', (req, res) => {
@@ -163,19 +206,40 @@ router.get('/add-ugcpr', function (req, res, next) {
 router.get('/add-ugcprarrear', function (req, res, next) {
   res.render('user/add-ugcprarrear');
 })
+router.get('/add-ntsprarrear', function (req, res, next) {
+  res.render('user/add-ntsprarrear');
+})
+router.get('/add-arrears', function (req, res, next) {
+  res.render('user/add-arrears');
+})
 router.get('/add-index', function (req, res, next) {
   res.render('user/add-index');
 })
-router.post('/view-arrear', (req, res) => {
+router.post('/view-ugcarrear', (req, res) => {
   arrearHelpers.arrearWork(req.body).then((grand) => {
     var arrear = grand.items;
     var total = grand.total;
-    res.render('user/view-arrear',{arrear,total});
+    res.render('user/view-ugcarrear',{arrear,total});
   })
-  
-  
 });
 
+
+router.post('/view-arrears', (req, res) => {
+  arrearsHelpers.arrearsWork(req.body).then((grand) => {
+    var arrear = grand.items;
+    var total = grand.total;
+    res.render('user/view-arrears',{arrear,total});
+  })
+});
+
+
+router.post('/view-ntsarrear', (req, res) => {
+  ntsarrearHelpers.arrearWork(req.body).then((grand) => {
+    var arrear = grand.items;
+    var total = grand.total;
+    res.render('user/view-ntsarrear',{arrear,total});
+  })
+});
 
 router.get('/ka', function (req, res, next) {
   res.render('user/pages/ka');

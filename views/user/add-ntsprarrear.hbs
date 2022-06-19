@@ -5,37 +5,16 @@
         <div class="row">
             <div class="col-md-6">
                 <div>
-                    <h2 class="text-center mb-4">UGC Pay Revision Arrear</h2>
+                    <h2 class="text-center mb-4">NTS Pay Revision Arrear</h2>
                 </div>
 
-                <form action="/view-ugcarrear" method="POST" name="form">
+                <form action="/view-ntsarrear" method="POST" name="form">
 
                     <div class="form-group row">
                         <label for="colFormLabel" class="col-sm-2 col-form-label">Pay</label>
                         <div class="col-sm-4">
                             <input type="text" class="form-control" id="pay" placeholder="" name="pay">
                         </div>
-                        <label for="colFormLabel" class="col-sm-2 col-form-label">AGP</label>
-                        <div class="col-sm-4">
-                            <input type="text" class="form-control" id="agp" placeholder="" name="agp">
-                        </div>
-                    </div>
-
-
-                    <div class="form-group row">
-                        <label for="colFormLabel" class="col-sm-3 col-form-label">Joining Date</label>
-                        <label for="colFormLabel" class="col-sm-4 col-form-label">(only if after 1/1/2016)</label>
-                        <div class="col-sm-5">
-                            <input type="date" class="form-control" id="joiningdate" placeholder="" name="joiningdate">
-                        </div>
-
-                        <label for="colFormLabel" class="col-sm-3 col-form-label">Promotion Date</label>
-                        <label for="colFormLabel" class="col-sm-4 col-form-label">(only if after 1/1/2016)</label>
-                        <div class="col-sm-5">
-                            <input type="date" class="form-control" id="promotiondate" placeholder=""
-                                name="promotiondate">
-                        </div>
-
                     </div>
 
                     <div class="form-group row">
@@ -83,18 +62,18 @@
 
                     
 
-                    <div class="form-group row" style="visibility: hidden">
+                    <div class="form-group row" >
                         <label for="colFormLabel" class="col-sm-2 col-form-label">LWA</label>
-                        <div class="col-sm-2">
+                        <div class="col-sm-4">
                             <input type="text" class="form-control" id="fieldnames" placeholder="" name="fieldnames">
                         </div>
                         <label for="colFormLabel" class="col-sm-2 col-form-label">HPL</label>
-                        <div class="col-sm-5">
+                        <div class="col-sm-4">
                             <input type="text" class="form-control" id="hplnames" placeholder="" name="hplnames">
                         </div>
                     </div>
 
-                    <div class="form-group row" style="visibility: hidden">
+                    <div class="form-group row" >
 
                         <div class="form-group row">
                             <div class="col-sm-4">
@@ -103,6 +82,9 @@
 
                             <div class="col-sm-3">
                                 <input type="text" class="form-control" id="revpay" name="revpay">
+                            </div>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="oldpay" name="oldpay">
                             </div>
                         </div>
                         <div class="form-group row">
@@ -113,6 +95,9 @@
                             <div class="col-sm-3">
                                 <input type="text" class="form-control" id="first" name="first">
                             </div>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="oldfirst" name="oldfirst">
+                            </div>
                         </div>
                         <div class="form-group row">
                             <div class="col-sm-4">
@@ -121,6 +106,9 @@
 
                             <div class="col-sm-3">
                                 <input type="text" class="form-control" id="second" name="second">
+                            </div>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="oldsecond" name="oldsecond">
                             </div>
                         </div>
                         <div class="form-group row">
@@ -131,122 +119,13 @@
                             <div class="col-sm-3">
                                 <input type="text" class="form-control" id="third" name="third">
                             </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-sm-4">
-                                <input type="date" class="form-control" id="fourthdate" value="" name="fourthdate">
-                            </div>
-
-                            <div class="col-sm-3">
-                                <input type="text" class="form-control" id="fourth" name="fourth">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-sm-4">
-                                <input type="date" class="form-control" id="fifthdate" value="" name="fifthdate">
-                            </div>
-
-                            <div class="col-sm-3">
-                                <input type="text" class="form-control" id="fifth" name="fifth">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-sm-4">
-                                <input type="date" class="form-control" id="sixthdate" value="" name="sixthdate">
-                            </div>
-
-                            <div class="col-sm-3">
-                                <input type="text" class="form-control" id="sixth" name="sixth">
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <div class="col-sm-4">
-                                <input type="date" class="form-control" id="oldrevdate" name="oldrevdate">
-                            </div>
-                            <div class="col-sm-3">
-                                <input type="text" class="form-control" id="oldpay" name="oldpay">
-                            </div>
-                            <div class="col-sm-2">
-                                <input type="text" class="form-control" id="oldagp" name="oldagp">
-                            </div>
-
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-sm-4">
-                                <input type="date" class="form-control" id="oldfirstdate" name="oldfirstdate">
-                            </div>
-                            <div class="col-sm-3">
-                                <input type="text" class="form-control" id="oldfirst" name="oldfirst">
-                            </div>
-                            <div class="col-sm-2">
-                                <input type="text" class="form-control" id="oldagpfirst" name="oldagpfirst">
-                            </div>
-
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-sm-4">
-                                <input type="date" class="form-control" id="oldseconddate" value=""
-                                    name="oldseconddate">
-                            </div>
-                            <div class="col-sm-3">
-                                <input type="text" class="form-control" id="oldsecond" name="oldsecond">
-                            </div>
-                            <div class="col-sm-2">
-                                <input type="text" class="form-control" id="oldagpsecond" name="oldagpsecond">
-                            </div>
-
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-sm-4">
-                                <input type="date" class="form-control" id="oldthirddate" value="" name="oldthirddate">
-                            </div>
                             <div class="col-sm-3">
                                 <input type="text" class="form-control" id="oldthird" name="oldthird">
                             </div>
-                            <div class="col-sm-2">
-                                <input type="text" class="form-control" id="oldagpthird" name="oldagpthird">
-                            </div>
+                        </div>
 
                         </div>
-                        <div class="form-group row">
-                            <div class="col-sm-4">
-                                <input type="date" class="form-control" id="oldfourthdate" value=""
-                                    name="oldfourthdate">
-                            </div>
-                            <div class="col-sm-3">
-                                <input type="text" class="form-control" id="oldfourth" name="oldfourth">
-                            </div>
-                            <div class="col-sm-2">
-                                <input type="text" class="form-control" id="oldagpfourth" name="oldagpfourth">
-                            </div>
-
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-sm-4">
-                                <input type="date" class="form-control" id="oldfifthdate" value="" name="oldfifthdate">
-                            </div>
-                            <div class="col-sm-3">
-                                <input type="text" class="form-control" id="oldfifth" name="oldfifth">
-                            </div>
-                            <div class="col-sm-2">
-                                <input type="text" class="form-control" id="oldagpfifth" name="oldagpfifth">
-                            </div>
-
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-sm-4">
-                                <input type="date" class="form-control" id="oldsixthdate" value="" name="oldsixthdate">
-                            </div>
-                            <div class="col-sm-3">
-                                <input type="text" class="form-control" id="oldsixth" name="oldsixth">
-                            </div>
-                            <div class="col-sm-2">
-                                <input type="text" class="form-control" id="oldagpsixth" name="oldagpsixth">
-                            </div>
-
-                        </div>
-                        <div class="col-sm-4" style="visibility: hidden">
+                        <div class="col-sm-4" >
                             <input type="text" class="form-control" id="datime" placeholder="" name="datime">
                         </div>
                     </div>

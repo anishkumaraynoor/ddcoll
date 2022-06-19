@@ -11,7 +11,9 @@ const { response } = require('express');
 module.exports={
     addCollege:(college,callback)=>{
         db.get().collection('college').insertOne(college).then((data)=>{
+            
             callback(data.ops[0]._id);
+            
         })
     },
     getAllColleges:()=>{

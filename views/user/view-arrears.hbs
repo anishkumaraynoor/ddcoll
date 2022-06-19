@@ -1,0 +1,88 @@
+<section>
+
+
+
+
+
+
+        <div class="row">
+            <div class="col-lg-12 mt-5">
+                   <label class="text-center col-sm-4">Due</label>
+                    <label class="text-center col-sm-4">Drawn</label>
+                    <label class="text-center col-sm-3">Balance</label>
+                </div>
+        </div>
+        
+
+
+        <table class="table" id="datatable">
+            <thead>
+                <tr>
+                    <th scope="col">Month</th>
+                    <th scope="col">Pay</th>
+                    <th scope="col">DA</th>
+                    <th scope="col">HRA</th>
+                    <th scope="col">CCA</th>
+                    <th scope="col">AGP</th>
+                    <th scope="col">Pay</th>
+                    <th scope="col">DA</th>
+                    <th scope="col">HRA</th>
+                    <th scope="col">CCA</th>
+                    <th scope="col">AGP</th>
+                    <th scope="col">Pay</th>
+                    <th scope="col">DA</th>
+                    <th scope="col">HRA</th>
+                    <th scope="col">CCA</th>
+                    <th scope="col">AGP</th>
+                    <th scope="col">Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each arrear}}
+                <tr>
+                    <td>{{this.month}}</td>
+                    <td>{{this.duepay}}</td>
+                    <td>{{this.dueda}}</td>
+                    <td>{{this.duehra}}</td>
+                    <td>{{this.duecca}}</td>
+                    <td>{{this.dueagp}}</td>
+                    <td>{{this.drawnpay}}</td>
+                    <td>{{this.drawnda}}</td>
+                    <td>{{this.drawnhra}}</td>
+                    <td>{{this.drawncca}}</td>
+                    <td>{{this.drawnagp}}</td>
+                    <td>{{this.balancepay}}</td>
+                    <td>{{this.balanceda}}</td>
+                    <td>{{this.balancehra}}</td>
+                    <td>{{this.balancecca}}</td>
+                    <td>{{this.balanceagp}}</td>
+                    <td>{{this.balancetotal}}</td>
+                   
+                </tr>
+                {{/each}}
+                {{#each total}}
+                <tr class="font-weight-bold">
+                    <td>Total</td>
+                    <td>{{this.totalduepay}}</td>
+                    <td>{{this.totaldueda}}</td>
+                    <td>{{this.totalduehra}}</td>
+                    <td>{{this.totalduecca}}</td>
+                    <td>{{this.totaldueagp}}</td>
+                    <td>{{this.totaldrawnpay}}</td>
+                    <td>{{this.totaldrawnda}}</td>
+                    <td>{{this.totaldrawnhra}}</td>
+                    <td>{{this.totaldrawncca}}</td>
+                    <td>{{this.totaldrawnagp}}</td>
+                    <td>{{this.totalbalancepay}}</td>
+                    <td>{{this.totalbalanceda}}</td>
+                    <td>{{this.totalbalancehra}}</td>
+                    <td>{{this.totalbalancecca}}</td>
+                    <td>{{this.totalbalanceagp}}</td>
+                    <td>{{this.totalbalancetotal}}</td>
+                   
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+
+</section>

@@ -1,0 +1,29 @@
+    <section>
+        <div class="container mt-3">
+
+
+
+
+
+
+            <div class="row mt-4">
+            <a href="/view-vimala" class="btn btn-success ml-auto">View Staff</a>
+        </div>
+
+             <div class="row">
+            <div class="col-md-6">
+                <h2 class="text-center">VIMALA COLLEGE, THRISSUR</h2>
+                <form action="/edit-vimala/{{vimala._id}}" method="POST" name="form">
+                    <label for="">Name of Staff</label>
+                    <input type="text" name="staffname" class="form-control" value="{{vimala.staffname}}">
+                    <label for="">Designation</label>
+                    <input type="text" name="designation" class="form-control" value="{{vimala.designation}}">
+                    <button type="submit" class="btn btn-success mt-4" >Add</button>
+                </form>
+            </div>
+        </div>
+        </div>
+    </section>
+   
+
+    

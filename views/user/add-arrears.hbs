@@ -1,0 +1,829 @@
+<section>
+
+
+
+
+
+
+    <div class="container mt-3">
+        <div class="row">
+            
+                <div class="col-lg-12">
+                    <h2 class="text-center mb-4">Arrears</h2>
+                </div>
+
+                <form action="/view-arrears" method="POST" name="form">                 
+
+                    <div class="form-group row" >
+ 
+                        <label for="colFormLabel" class="col-lg-6 col-form-label">Due</label>
+                        <label for="colFormLabel" class="col-lg-3 col-form-label">Drawn</label>
+                        <a onclick="CopyDate()" class="btn btn-success" id="">Copy Date</a>
+                        <a onclick="CopyPay()" class="btn btn-success" id="">Copy Pay</a>
+                        
+                        <div class="col-lg-6 form-group row">    
+                            <div class="col-lg-5">
+                                <input type="date" class="form-control" id="dateone" name="dateone">
+                            </div>
+                            <div class="col-lg-4">
+                                <input type="text" class="form-control" id="payone" name="payone">
+                            </div>
+                            <div class="col-lg-3">
+                                <input type="text" class="form-control" id="agpone" name="agpone">
+                            </div>  
+
+                            <div class="col-lg-5">
+                                <input type="date" class="form-control" id="datetwo" name="datetwo">
+                            </div>
+                            <div class="col-lg-4">
+                                <input type="text" class="form-control" id="paytwo" name="paytwo">
+                            </div>
+                            <div class="col-lg-3">
+                                <input type="text" class="form-control" id="agptwo" name="agptwo">
+                            </div>  
+
+                            <div class="col-lg-5">
+                                <input type="date" class="form-control" id="datethree" name="datethree">
+                            </div>
+                            <div class="col-lg-4">
+                                <input type="text" class="form-control" id="paythree" name="paythree">
+                            </div>
+                            <div class="col-lg-3">
+                                <input type="text" class="form-control" id="agpthree" name="agpthree">
+                            </div> 
+
+                            <div class="col-lg-5">
+                                <input type="date" class="form-control" id="datefour" name="datefour">
+                            </div>
+                            <div class="col-lg-4">
+                                <input type="text" class="form-control" id="payfour" name="payfour">
+                            </div>
+                            <div class="col-lg-3">
+                                <input type="text" class="form-control" id="agpfour" name="agpfour">
+                            </div>  
+
+                            <div class="col-lg-5">
+                                <input type="date" class="form-control" id="datefive" name="datefive">
+                            </div>
+                            <div class="col-lg-4">
+                                <input type="text" class="form-control" id="payfive" name="payfive">
+                            </div>
+                            <div class="col-lg-3">
+                                <input type="text" class="form-control" id="agpfive" name="agpfive">
+                            </div>  
+
+                            <div class="col-lg-5">
+                                <input type="date" class="form-control" id="datesix" name="datesix">
+                            </div>
+                            <div class="col-lg-4">
+                                <input type="text" class="form-control" id="paysix" name="paysix">
+                            </div>
+                            <div class="col-lg-3">
+                                <input type="text" class="form-control" id="agpsix" name="agpsix">
+                            </div> 
+
+                            <div class="col-lg-5">
+                                <input type="date" class="form-control" id="dateseven" name="dateseven">
+                            </div>
+                            <div class="col-lg-4">
+                                <input type="text" class="form-control" id="payseven" name="payseven">
+                            </div>
+                            <div class="col-lg-3">
+                                <input type="text" class="form-control" id="agpseven" name="agpseven">
+                            </div>  
+
+                            <div class="col-lg-5">
+                                <input type="date" class="form-control" id="dateeight" name="dateeight">
+                            </div>
+                            <div class="col-lg-4">
+                                <input type="text" class="form-control" id="payeight" name="payeight">
+                            </div>
+                            <div class="col-lg-3">
+                                <input type="text" class="form-control" id="agpeight" name="agpeight">
+                            </div>  
+
+                            <div class="col-lg-5">
+                                <input type="date" class="form-control" id="datenine" name="datenine">
+                            </div>
+                            <div class="col-lg-4">
+                                <input type="text" class="form-control" id="paynine" name="paynine">
+                            </div>
+                            <div class="col-lg-3">
+                                <input type="text" class="form-control" id="agpnine" name="agpnine">
+                            </div> 
+
+                            <div class="col-lg-5">
+                                <input type="date" class="form-control" id="dateten" name="dateten">
+                            </div>
+                            <div class="col-lg-4">
+                                <input type="text" class="form-control" id="payten" name="payten">
+                            </div>
+                            <div class="col-lg-3">
+                                <input type="text" class="form-control" id="agpten" name="agpten">
+                            </div>  
+                        </div>
+
+                        <div class="col-lg-6 form-group row">    
+                            <div class="col-lg-5">
+                                <input type="date" class="form-control" id="olddateone" name="olddateone">
+                            </div>
+                            <div class="col-lg-4">
+                                <input type="text" class="form-control" id="oldpayone" name="oldpayone">
+                            </div>
+                            <div class="col-lg-3">
+                                <input type="text" class="form-control" id="oldagpone" name="oldagpone">
+                            </div>  
+
+                            <div class="col-lg-5">
+                                <input type="date" class="form-control" id="olddatetwo" name="olddatetwo">
+                            </div>
+                            <div class="col-lg-4">
+                                <input type="text" class="form-control" id="oldpaytwo" name="oldpaytwo">
+                            </div>
+                            <div class="col-lg-3">
+                                <input type="text" class="form-control" id="oldagptwo" name="oldagptwo">
+                            </div>  
+
+                            <div class="col-lg-5">
+                                <input type="date" class="form-control" id="olddatethree" name="olddatethree">
+                            </div>
+                            <div class="col-lg-4">
+                                <input type="text" class="form-control" id="oldpaythree" name="oldpaythree">
+                            </div>
+                            <div class="col-lg-3">
+                                <input type="text" class="form-control" id="oldagpthree" name="oldagpthree">
+                            </div> 
+
+                            <div class="col-lg-5">
+                                <input type="date" class="form-control" id="olddatefour" name="olddatefour">
+                            </div>
+                            <div class="col-lg-4">
+                                <input type="text" class="form-control" id="oldpayfour" name="oldpayfour">
+                            </div>
+                            <div class="col-lg-3">
+                                <input type="text" class="form-control" id="oldagpfour" name="oldagpfour">
+                            </div>  
+
+                            <div class="col-lg-5">
+                                <input type="date" class="form-control" id="olddatefive" name="olddatefive">
+                            </div>
+                            <div class="col-lg-4">
+                                <input type="text" class="form-control" id="oldpayfive" name="oldpayfive">
+                            </div>
+                            <div class="col-lg-3">
+                                <input type="text" class="form-control" id="oldagpfive" name="oldagpfive">
+                            </div>  
+
+                            <div class="col-lg-5">
+                                <input type="date" class="form-control" id="olddatesix" name="olddatesix">
+                            </div>
+                            <div class="col-lg-4">
+                                <input type="text" class="form-control" id="oldpaysix" name="oldpaysix">
+                            </div>
+                            <div class="col-lg-3">
+                                <input type="text" class="form-control" id="oldagpsix" name="oldagpsix">
+                            </div> 
+
+                            <div class="col-lg-5">
+                                <input type="date" class="form-control" id="olddateseven" name="olddateseven">
+                            </div>
+                            <div class="col-lg-4">
+                                <input type="text" class="form-control" id="oldpayseven" name="oldpayseven">
+                            </div>
+                            <div class="col-lg-3">
+                                <input type="text" class="form-control" id="oldagpseven" name="oldagpseven">
+                            </div>  
+
+                            <div class="col-lg-5">
+                                <input type="date" class="form-control" id="olddateeight" name="olddateeight">
+                            </div>
+                            <div class="col-lg-4">
+                                <input type="text" class="form-control" id="oldpayeight" name="oldpayeight">
+                            </div>
+                            <div class="col-lg-3">
+                                <input type="text" class="form-control" id="oldagpeight" name="oldagpeight">
+                            </div>  
+
+                            <div class="col-lg-5">
+                                <input type="date" class="form-control" id="olddatenine" name="olddatenine">
+                            </div>
+                            <div class="col-lg-4">
+                                <input type="text" class="form-control" id="oldpaynine" name="oldpaynine">
+                            </div>
+                            <div class="col-lg-3">
+                                <input type="text" class="form-control" id="oldagpnine" name="oldagpnine">
+                            </div> 
+
+                            <div class="col-lg-5">
+                                <input type="date" class="form-control" id="olddateten" name="olddateten">
+                            </div>
+                            <div class="col-lg-4">
+                                <input type="text" class="form-control" id="oldpayten" name="oldpayten">
+                            </div>
+                            <div class="col-lg-3">
+                                <input type="text" class="form-control" id="oldagpten" name="oldagpten">
+                            </div>  
+                        </div>
+                             
+                    </div>
+
+
+                    <div class="form-group row" >
+ 
+                        <label for="colFormLabel" class="col-lg-1 col-form-label">DueDA</label>
+                        <a onclick="PreDATS()" class="btn btn-success" id="">Pre DA TS</a>
+                        <a onclick="RevDATS()" class="btn btn-success" id="">Rev DA TS</a>
+                        <a onclick="PreDANTS()" class="btn btn-success" id="">Pre DA NTS</a>
+                        <a onclick="RevDANTS()" class="btn btn-success" id="">Rev DA NTS</a>
+                        <label for="colFormLabel" class="col-lg-1 col-form-label">DrawnDA</label>
+                        <a onclick="drawnPreDATS()" class="btn btn-success" id="">Pre DA TS</a>
+                        <a onclick="drawnRevDATS()" class="btn btn-success" id="">Rev DA TS</a>
+                        <a onclick="drawnPreDANTS()" class="btn btn-success" id="">Pre DA NTS</a>
+                        <a onclick="drawnRevDANTS()" class="btn btn-success" id="">Rev DA NTS</a>
+                        
+                        
+                        <div class="col-lg-6 form-group row">
+                            
+                            <label for="colFormLabel" class="col-sm-3 col-form-label">1/1/2011</label>
+                            <div class="col-sm-2"><input type="text" class="form-control" id="daone" placeholder="" name="daone"></div>
+                            <label for="colFormLabel" class="col-sm-3 col-form-label">1/7/2011</label>
+                            <div class="col-sm-2"><input type="text" class="form-control" id="datwo" placeholder="" name="datwo"></div> 
+                            <label for="colFormLabel" class="col-sm-3 col-form-label">1/1/2012</label>
+                            <div class="col-sm-2"><input type="text" class="form-control" id="dathree" placeholder="" name="dathree"></div> 
+                            <label for="colFormLabel" class="col-sm-3 col-form-label">1/7/2012</label>
+                            <div class="col-sm-2"><input type="text" class="form-control" id="dafour" placeholder="" name="dafour"></div> 
+                            <label for="colFormLabel" class="col-sm-3 col-form-label">1/1/2013</label>
+                            <div class="col-sm-2"><input type="text" class="form-control" id="dafive" placeholder="" name="dafive"></div> 
+                            <label for="colFormLabel" class="col-sm-3 col-form-label">1/7/2013</label>
+                            <div class="col-sm-2"><input type="text" class="form-control" id="dasix" placeholder="" name="dasix"></div> 
+                            <label for="colFormLabel" class="col-sm-3 col-form-label">1/1/2014</label>
+                            <div class="col-sm-2"><input type="text" class="form-control" id="daseven" placeholder="" name="daseven"></div> 
+                            <label for="colFormLabel" class="col-sm-3 col-form-label">1/7/2014</label>
+                            <div class="col-sm-2"><input type="text" class="form-control" id="daeight" placeholder="" name="daeight"></div> 
+                            <label for="colFormLabel" class="col-sm-3 col-form-label">1/1/2015</label>
+                            <div class="col-sm-2"><input type="text" class="form-control" id="danine" placeholder="" name="danine"></div> 
+                            <label for="colFormLabel" class="col-sm-3 col-form-label">1/7/2015</label>
+                            <div class="col-sm-2"><input type="text" class="form-control" id="daten" placeholder="" name="daten"></div> 
+                            <label for="colFormLabel" class="col-sm-3 col-form-label">1/1/2016</label>
+                            <div class="col-sm-2"><input type="text" class="form-control" id="daeleven" placeholder="" name="daeleven"></div> 
+                            <label for="colFormLabel" class="col-sm-3 col-form-label">1/7/2016</label>
+                            <div class="col-sm-2"><input type="text" class="form-control" id="datwelve" placeholder="" name="datwelve"></div> 
+                            <label for="colFormLabel" class="col-sm-3 col-form-label">1/1/2017</label>
+                            <div class="col-sm-2"><input type="text" class="form-control" id="dathirteen" placeholder="" name="dathirteen"></div> 
+                            <label for="colFormLabel" class="col-sm-3 col-form-label">1/7/2017</label>
+                            <div class="col-sm-2"><input type="text" class="form-control" id="dafourteen" placeholder="" name="dafourteen"></div> 
+                            <label for="colFormLabel" class="col-sm-3 col-form-label">1/1/2018</label>
+                            <div class="col-sm-2"><input type="text" class="form-control" id="dafifteen" placeholder="" name="dafifteen"></div> 
+                            <label for="colFormLabel" class="col-sm-3 col-form-label">1/7/2018</label>
+                            <div class="col-sm-2"><input type="text" class="form-control" id="dasixteen" placeholder="" name="dasixteen"></div> 
+                            <label for="colFormLabel" class="col-sm-3 col-form-label">1/1/2019</label>
+                            <div class="col-sm-2"><input type="text" class="form-control" id="daseventeen" placeholder="" name="daseventeen"></div> 
+                            <label for="colFormLabel" class="col-sm-3 col-form-label">1/7/2019</label>
+                            <div class="col-sm-2"><input type="text" class="form-control" id="daeighteen" placeholder="" name="daeighteen"></div> 
+                            <label for="colFormLabel" class="col-sm-3 col-form-label">1/1/2020</label>
+                            <div class="col-sm-2"><input type="text" class="form-control" id="danineteen" placeholder="" name="danineteen"></div> 
+                            <label for="colFormLabel" class="col-sm-3 col-form-label">1/7/2020</label>
+                            <div class="col-sm-2"><input type="text" class="form-control" id="datwenty" placeholder="" name="datwenty"></div>
+                            <label for="colFormLabel" class="col-sm-3 col-form-label">1/1/2021</label>
+                            <div class="col-sm-2"><input type="text" class="form-control" id="datwentyone" placeholder="" name="datwentyone"></div> 
+                            <label for="colFormLabel" class="col-sm-3 col-form-label">1/7/2021</label>
+                            <div class="col-sm-2"><input type="text" class="form-control" id="datwentytwo" placeholder="" name="datwentytwo"></div>  
+                        
+                        </div>
+
+                        <div class="col-lg-6 form-group row">    
+                            <label for="colFormLabel" class="col-sm-3 col-form-label">1/1/2011</label>
+                            <div class="col-sm-2"><input type="text" class="form-control" id="olddaone" placeholder="" name="olddaone"></div>
+                            <label for="colFormLabel" class="col-sm-3 col-form-label">1/7/2011</label>
+                            <div class="col-sm-2"><input type="text" class="form-control" id="olddatwo" placeholder="" name="olddatwo"></div> 
+                            <label for="colFormLabel" class="col-sm-3 col-form-label">1/1/2012</label>
+                            <div class="col-sm-2"><input type="text" class="form-control" id="olddathree" placeholder="" name="olddathree"></div> 
+                            <label for="colFormLabel" class="col-sm-3 col-form-label">1/7/2012</label>
+                            <div class="col-sm-2"><input type="text" class="form-control" id="olddafour" placeholder="" name="olddafour"></div> 
+                            <label for="colFormLabel" class="col-sm-3 col-form-label">1/1/2013</label>
+                            <div class="col-sm-2"><input type="text" class="form-control" id="olddafive" placeholder="" name="olddafive"></div> 
+                            <label for="colFormLabel" class="col-sm-3 col-form-label">1/7/2013</label>
+                            <div class="col-sm-2"><input type="text" class="form-control" id="olddasix" placeholder="" name="olddasix"></div> 
+                            <label for="colFormLabel" class="col-sm-3 col-form-label">1/1/2014</label>
+                            <div class="col-sm-2"><input type="text" class="form-control" id="olddaseven" placeholder="" name="olddaseven"></div> 
+                            <label for="colFormLabel" class="col-sm-3 col-form-label">1/7/2014</label>
+                            <div class="col-sm-2"><input type="text" class="form-control" id="olddaeight" placeholder="" name="olddaeight"></div> 
+                            <label for="colFormLabel" class="col-sm-3 col-form-label">1/1/2015</label>
+                            <div class="col-sm-2"><input type="text" class="form-control" id="olddanine" placeholder="" name="olddanine"></div> 
+                            <label for="colFormLabel" class="col-sm-3 col-form-label">1/7/2015</label>
+                            <div class="col-sm-2"><input type="text" class="form-control" id="olddaten" placeholder="" name="olddaten"></div> 
+                            <label for="colFormLabel" class="col-sm-3 col-form-label">1/1/2016</label>
+                            <div class="col-sm-2"><input type="text" class="form-control" id="olddaeleven" placeholder="" name="olddaeleven"></div> 
+                            <label for="colFormLabel" class="col-sm-3 col-form-label">1/7/2016</label>
+                            <div class="col-sm-2"><input type="text" class="form-control" id="olddatwelve" placeholder="" name="olddatwelve"></div> 
+                            <label for="colFormLabel" class="col-sm-3 col-form-label">1/1/2017</label>
+                            <div class="col-sm-2"><input type="text" class="form-control" id="olddathirteen" placeholder="" name="olddathirteen"></div> 
+                            <label for="colFormLabel" class="col-sm-3 col-form-label">1/7/2017</label>
+                            <div class="col-sm-2"><input type="text" class="form-control" id="olddafourteen" placeholder="" name="olddafourteen"></div> 
+                            <label for="colFormLabel" class="col-sm-3 col-form-label">1/1/2018</label>
+                            <div class="col-sm-2"><input type="text" class="form-control" id="olddafifteen" placeholder="" name="olddafifteen"></div> 
+                            <label for="colFormLabel" class="col-sm-3 col-form-label">1/7/2018</label>
+                            <div class="col-sm-2"><input type="text" class="form-control" id="olddasixteen" placeholder="" name="olddasixteen"></div> 
+                            <label for="colFormLabel" class="col-sm-3 col-form-label">1/1/2019</label>
+                            <div class="col-sm-2"><input type="text" class="form-control" id="olddaseventeen" placeholder="" name="olddaseventeen"></div> 
+                            <label for="colFormLabel" class="col-sm-3 col-form-label">1/7/2019</label>
+                            <div class="col-sm-2"><input type="text" class="form-control" id="olddaeighteen" placeholder="" name="olddaeighteen"></div> 
+                            <label for="colFormLabel" class="col-sm-3 col-form-label">1/1/2020</label>
+                            <div class="col-sm-2"><input type="text" class="form-control" id="olddanineteen" placeholder="" name="olddanineteen"></div> 
+                            <label for="colFormLabel" class="col-sm-3 col-form-label">1/7/2020</label>
+                            <div class="col-sm-2"><input type="text" class="form-control" id="olddatwenty" placeholder="" name="olddatwenty"></div>
+                            <label for="colFormLabel" class="col-sm-3 col-form-label">1/1/2021</label>
+                            <div class="col-sm-2"><input type="text" class="form-control" id="olddatwentyone" placeholder="" name="olddatwentyone"></div> 
+                            <label for="colFormLabel" class="col-sm-3 col-form-label">1/7/2021</label>
+                            <div class="col-sm-2"><input type="text" class="form-control" id="olddatwentytwo" placeholder="" name="olddatwentytwo"></div> 
+                        </div>
+                             
+                    </div>
+
+                    
+
+                    <div class="form-group row" >
+ 
+                        <label for="colFormLabel" class="col-lg-6 col-form-label">Due HRA and CCA</label>
+                        <label for="colFormLabel" class="col-lg-3 col-form-label">Drawn HRA and CCA</label>
+                        <a onclick="CopyHC()" class="btn btn-success" id="">Copy HRAandCCA</a>
+                        
+                        <div class="col-lg-6 form-group row">    
+                            <div class="col-lg-5">
+                                <input type="date" class="form-control" id="hcdateone" name="hcdateone">
+                            </div>
+                            <div class="col-lg-4">
+                                <input type="text" class="form-control" id="hraone" name="hraone">
+                            </div>
+                            <div class="col-lg-3">
+                                <input type="text" class="form-control" id="ccaone" name="ccaone">
+                            </div>  
+
+                            <div class="col-lg-5">
+                                <input type="date" class="form-control" id="hcdatetwo" name="hcdatetwo">
+                            </div>
+                            <div class="col-lg-4">
+                                <input type="text" class="form-control" id="hratwo" name="hratwo">
+                            </div>
+                            <div class="col-lg-3">
+                                <input type="text" class="form-control" id="ccatwo" name="ccatwo">
+                            </div>  
+
+                            <div class="col-lg-5">
+                                <input type="date" class="form-control" id="hcdatethree" name="hcdatethree">
+                            </div>
+                            <div class="col-lg-4">
+                                <input type="text" class="form-control" id="hrathree" name="hrathree">
+                            </div>
+                            <div class="col-lg-3">
+                                <input type="text" class="form-control" id="ccathree" name="ccathree">
+                            </div> 
+
+                            <div class="col-lg-5">
+                                <input type="date" class="form-control" id="hcdatefour" name="hcdatefour">
+                            </div>
+                            <div class="col-lg-4">
+                                <input type="text" class="form-control" id="hrafour" name="hrafour">
+                            </div>
+                            <div class="col-lg-3">
+                                <input type="text" class="form-control" id="ccafour" name="ccafour">
+                            </div>  
+
+                            <div class="col-lg-5">
+                                <input type="date" class="form-control" id="hcdatefive" name="hcdatefive">
+                            </div>
+                            <div class="col-lg-4">
+                                <input type="text" class="form-control" id="hrafive" name="hrafive">
+                            </div>
+                            <div class="col-lg-3">
+                                <input type="text" class="form-control" id="ccafive" name="ccafive">
+                            </div>  
+                        </div>
+
+                        <div class="col-lg-6 form-group row">    
+                            <div class="col-lg-5">
+                                <input type="date" class="form-control" id="oldhcdateone" name="oldhcdateone">
+                            </div>
+                            <div class="col-lg-4">
+                                <input type="text" class="form-control" id="oldhraone" name="oldhraone">
+                            </div>
+                            <div class="col-lg-3">
+                                <input type="text" class="form-control" id="oldccaone" name="oldccaone">
+                            </div>  
+
+                            <div class="col-lg-5">
+                                <input type="date" class="form-control" id="oldhcdatetwo" name="oldhcdatetwo">
+                            </div>
+                            <div class="col-lg-4">
+                                <input type="text" class="form-control" id="oldhratwo" name="oldhratwo">
+                            </div>
+                            <div class="col-lg-3">
+                                <input type="text" class="form-control" id="oldccatwo" name="oldccatwo">
+                            </div>  
+
+                            <div class="col-lg-5">
+                                <input type="date" class="form-control" id="oldhcdatethree" name="oldhcdatethree">
+                            </div>
+                            <div class="col-lg-4">
+                                <input type="text" class="form-control" id="oldhrathree" name="oldhrathree">
+                            </div>
+                            <div class="col-lg-3">
+                                <input type="text" class="form-control" id="oldccathree" name="oldccathree">
+                            </div> 
+
+                            <div class="col-lg-5">
+                                <input type="date" class="form-control" id="oldhcdatefour" name="oldhcdatefour">
+                            </div>
+                            <div class="col-lg-4">
+                                <input type="text" class="form-control" id="oldhrafour" name="oldhrafour">
+                            </div>
+                            <div class="col-lg-3">
+                                <input type="text" class="form-control" id="oldccafour" name="oldccafour">
+                            </div>  
+
+                            <div class="col-lg-5">
+                                <input type="date" class="form-control" id="oldhcdatefive" name="oldhcdatefive">
+                            </div>
+                            <div class="col-lg-4">
+                                <input type="text" class="form-control" id="oldhrafive" name="oldhrafive">
+                            </div>
+                            <div class="col-lg-3">
+                                <input type="text" class="form-control" id="oldccafive" name="oldccafive">
+                            </div>   
+                        </div>
+                             
+                    </div>
+
+                        <div class="form-group row">
+                            <label for="colFormLabel" class="col-lg-2 col-form-label">Revision Date</label>
+                            <div class="col-lg-3">
+                                <input type="date" class="form-control" id="revisiondate" placeholder=""
+                                    name="revisiondate">
+                            </div>
+                        </div>
+
+                    <div class="form-group row">
+                        <label for="colFormLabel" class="col-sm-2 col-form-label">Bill Period</label>
+                        <label for="colFormLabel" class="col-sm-1 col-form-label">From</label>
+                        <div class="col-sm-3">
+                            <input type="month" class="form-control" id="monthfrom" placeholder="" name="monthfrom">
+                        </div>
+                        <label for="colFormLabel" class="col-sm-1 col-form-label">To</label>
+                        <div class="col-sm-3">
+                            <input type="month" class="form-control" id="monthto" placeholder="" name="monthto">
+                        </div>
+                    </div>
+
+                    <div class="lwa_wrapper">
+                        <div class="col-sm-12 mb-1">
+                            <label for="colFormLabel" class="col-sm-2 col-form-label">LWA</label>
+                            <input type="date" name="field[]" value="">
+                            <input type="date" name="field[]" value="">
+                            <a href="javascript:void(0);" class="add_lwa" title="Add field"><img
+                                    src="/images/addbutton.png" width="25px" height="auto" /></a>
+                        </div>
+                    </div>
+
+                    <div class="hpl_wrapper">
+                        <div class="col-sm-12 mb-1">
+                            <label for="colFormLabel" class="col-sm-2 col-form-label">HPL</label>
+                            <input type="date" name="hpl[]" value="">
+                            <input type="date" name="hpl[]" value="">
+                            <a href="javascript:void(0);" class="add_hpl" title="Add field"><img
+                                    src="/images/addbutton.png" width="25px" height="auto" /></a>
+                        </div>
+                    </div>
+      
+                    <a onclick="Add()" class="btn btn-success" id="">OK</a>
+                    <button type="submit" value="submit" class="btn btn-primary">Arrear Bill</button>
+
+                    <div class="form-group row" style="visibility: hidden">
+                        <label for="colFormLabel" class="col-sm-2 col-form-label">LWA</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" id="fieldnames" placeholder="" name="fieldnames">
+                        </div>
+                        <label for="colFormLabel" class="col-sm-2 col-form-label">HPL</label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" id="hplnames" placeholder="" name="hplnames">
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4" style="visibility: hidden">
+                            <input type="text" class="form-control" id="datime" placeholder="" name="datime">
+                        </div>
+                </form>
+            
+        </div>
+    </div>
+
+</section>
+
+
+<script>
+    $(document).ready(function () {
+        var maxField = 20;
+        var addLWA = $('.add_lwa');
+        var wrapper = $('.lwa_wrapper');
+        var fieldHTML = '<div class="col-sm-12 mb-1"><label for="colFormLabel" class="col-sm-2 col-form-label"></label><input type="date" name="field[]" value""/><input type="date" name="field[]" value""/><a href="javascript:void(0);" class="remove_lwa"><img src="/images/removebutton.png" width="25px" height="auto"/></a></div>'
+        var x = 1;
+
+        $(addLWA).click(function () {
+            if (x < maxField) {
+                x++;
+                $(wrapper).append(fieldHTML);
+            }
+        });
+        $(wrapper).on('click', '.remove_lwa', function (e) {
+            e.preventDefault();
+            $(this).parent('div').remove();
+            x--;
+        });
+
+        var maxHPL = 20;
+        var addHPL = $('.add_hpl');
+        var hplwrapper = $('.hpl_wrapper');
+        var hplHTML = '<div class="col-sm-12 mb-1"><label for="colFormLabel" class="col-sm-2 col-form-label"></label><input type="date" name="hpl[]" value""/><input type="date" name="hpl[]" value""/><a href="javascript:void(0);" class="remove_hpl"><img src="/images/removebutton.png" width="25px" height="auto"/></a></div>'
+        var y = 1;
+
+        $(addHPL).click(function () {
+            if (y < maxHPL) {
+                y++;
+                $(hplwrapper).append(hplHTML);
+            }
+        });
+        $(hplwrapper).on('click', '.remove_hpl', function (e) {
+            e.preventDefault();
+            $(this).parent('div').remove();
+            y--;
+        });
+    });
+
+
+
+
+    function Add() {
+        var lwa = $("input[name='field[]']").map(function () { return $(this).val(); }).get();
+        document.form.fieldnames.value = lwa;
+        var hpl = $("input[name='hpl[]']").map(function () { return $(this).val(); }).get();
+        document.form.hplnames.value = hpl;
+        document.form.datime.value = new Date(document.form.hcdatefive.value).getTime() - 86400000;
+    }
+
+    function PreDATS(){
+        document.form.daone.value = 51
+        document.form.datwo.value = 58
+        document.form.dathree.value = 65 
+        document.form.dafour.value = 72
+        document.form.dafive.value = 80
+        document.form.dasix.value = 90
+        document.form.daseven.value = 100 
+        document.form.daeight.value = 107
+        document.form.danine.value = 113
+        document.form.daten.value = 119
+        document.form.daeleven.value = 125 
+        document.form.datwelve.value = 132
+        document.form.dathirteen.value = 136 
+        document.form.dafourteen.value = 139
+        document.form.dafifteen.value = 142
+        document.form.dasixteen.value = 148
+        document.form.daseventeen.value = 154 
+        document.form.daeighteen.value = 164
+        document.form.danineteen.value = 164
+        document.form.datwenty.value = 164
+        document.form.datwentyone.value = 164
+        document.form.datwentytwo.value = 164
+    }
+
+    function RevDATS(){
+        document.form.daone.value = 51
+        document.form.datwo.value = 58
+        document.form.dathree.value = 65 
+        document.form.dafour.value = 72
+        document.form.dafive.value = 80
+        document.form.dasix.value = 90
+        document.form.daseven.value = 100 
+        document.form.daeight.value = 107
+        document.form.danine.value = 113
+        document.form.daten.value = 119
+        document.form.daeleven.value = 0 
+        document.form.datwelve.value = 3
+        document.form.dathirteen.value = 5 
+        document.form.dafourteen.value = 6
+        document.form.dafifteen.value = 8
+        document.form.dasixteen.value = 11
+        document.form.daseventeen.value = 12 
+        document.form.daeighteen.value = 17
+        document.form.danineteen.value = 17
+        document.form.datwenty.value = 17
+        document.form.datwentyone.value = 17
+        document.form.datwentytwo.value = 17
+    }
+
+    function PreDANTS(){
+        document.form.daone.value = 24
+        document.form.datwo.value = 31
+        document.form.dathree.value = 38 
+        document.form.dafour.value = 45
+        document.form.dafive.value = 53
+        document.form.dasix.value = 63
+        document.form.daseven.value = 73 
+        document.form.daeight.value = 0
+        document.form.danine.value = 3
+        document.form.daten.value = 6
+        document.form.daeleven.value = 9
+        document.form.datwelve.value = 12
+        document.form.dathirteen.value = 14
+        document.form.dafourteen.value = 15
+        document.form.dafifteen.value = 17
+        document.form.dasixteen.value = 20
+        document.form.daseventeen.value = 23 
+        document.form.daeighteen.value = 28
+        document.form.danineteen.value = 32
+        document.form.datwenty.value = 36
+        document.form.datwentyone.value = 36
+        document.form.datwentytwo.value = 36
+    }
+
+    function RevDANTS(){
+        document.form.daone.value = 24
+        document.form.datwo.value = 31
+        document.form.dathree.value = 38 
+        document.form.dafour.value = 45
+        document.form.dafive.value = 53
+        document.form.dasix.value = 63
+        document.form.daseven.value = 73 
+        document.form.daeight.value = 0
+        document.form.danine.value = 3
+        document.form.daten.value = 6
+        document.form.daeleven.value = 9 
+        document.form.datwelve.value = 12
+        document.form.dathirteen.value = 14 
+        document.form.dafourteen.value = 15
+        document.form.dafifteen.value = 17
+        document.form.dasixteen.value = 20
+        document.form.daseventeen.value = 23  
+        document.form.daeighteen.value = 0
+        document.form.danineteen.value = 4
+        document.form.datwenty.value = 7
+        document.form.datwentyone.value = 7
+        document.form.datwentytwo.value = 7
+    }
+
+    function drawnPreDATS(){
+        document.form.olddaone.value = 51
+        document.form.olddatwo.value = 58
+        document.form.olddathree.value = 65 
+        document.form.olddafour.value = 72
+        document.form.olddafive.value = 80
+        document.form.olddasix.value = 90
+        document.form.olddaseven.value = 100 
+        document.form.olddaeight.value = 107
+        document.form.olddanine.value = 113
+        document.form.olddaten.value = 119
+        document.form.olddaeleven.value = 125 
+        document.form.olddatwelve.value = 132
+        document.form.olddathirteen.value = 136 
+        document.form.olddafourteen.value = 139
+        document.form.olddafifteen.value = 142
+        document.form.olddasixteen.value = 148
+        document.form.olddaseventeen.value = 154 
+        document.form.olddaeighteen.value = 164
+        document.form.olddanineteen.value = 164
+        document.form.olddatwenty.value = 164
+        document.form.olddatwentyone.value = 164
+        document.form.olddatwentytwo.value = 164
+    }
+
+    function drawnRevDATS(){
+        document.form.olddaone.value = 51
+        document.form.olddatwo.value = 58
+        document.form.olddathree.value = 65 
+        document.form.olddafour.value = 72
+        document.form.olddafive.value = 80
+        document.form.olddasix.value = 90
+        document.form.olddaseven.value = 100 
+        document.form.olddaeight.value = 107
+        document.form.olddanine.value = 113
+        document.form.olddaten.value = 119
+        document.form.olddaeleven.value = 0 
+        document.form.olddatwelve.value = 3
+        document.form.olddathirteen.value = 5 
+        document.form.olddafourteen.value = 6
+        document.form.olddafifteen.value = 8
+        document.form.olddasixteen.value = 11
+        document.form.olddaseventeen.value = 12 
+        document.form.olddaeighteen.value = 17
+        document.form.olddanineteen.value = 17
+        document.form.olddatwenty.value = 17
+        document.form.olddatwentyone.value = 17
+        document.form.olddatwentytwo.value = 17
+    }
+
+    function drawnPreDANTS(){
+        document.form.olddaone.value = 24
+        document.form.olddatwo.value = 31
+        document.form.olddathree.value = 38 
+        document.form.olddafour.value = 45
+        document.form.olddafive.value = 53
+        document.form.olddasix.value = 63
+        document.form.olddaseven.value = 73 
+        document.form.olddaeight.value = 0
+        document.form.olddanine.value = 3
+        document.form.olddaten.value = 6
+        document.form.olddaeleven.value = 9
+        document.form.olddatwelve.value = 12
+        document.form.olddathirteen.value = 14
+        document.form.olddafourteen.value = 15
+        document.form.olddafifteen.value = 17
+        document.form.olddasixteen.value = 20
+        document.form.olddaseventeen.value = 23 
+        document.form.olddaeighteen.value = 28
+        document.form.olddanineteen.value = 32
+        document.form.olddatwenty.value = 36
+        document.form.olddatwentyone.value = 36
+        document.form.olddatwentytwo.value = 36
+    }
+
+    function drawnRevDANTS(){
+        document.form.olddaone.value = 24
+        document.form.olddatwo.value = 31
+        document.form.olddathree.value = 38 
+        document.form.olddafour.value = 45
+        document.form.olddafive.value = 53
+        document.form.olddasix.value = 63
+        document.form.olddaseven.value = 73 
+        document.form.olddaeight.value = 0
+        document.form.olddanine.value = 3
+        document.form.olddaten.value = 6
+        document.form.olddaeleven.value = 9 
+        document.form.olddatwelve.value = 12
+        document.form.olddathirteen.value = 14 
+        document.form.olddafourteen.value = 15
+        document.form.olddafifteen.value = 17
+        document.form.olddasixteen.value = 20
+        document.form.olddaseventeen.value = 23  
+        document.form.olddaeighteen.value = 0
+        document.form.olddanineteen.value = 4
+        document.form.olddatwenty.value = 7
+        document.form.olddatwentyone.value = 7
+        document.form.olddatwentytwo.value = 7
+    }
+
+    function CopyDate(){
+        document.form.olddateone.value = document.form.dateone.value
+        document.form.olddatetwo.value = document.form.datetwo.value
+        document.form.olddatethree.value = document.form.datethree.value
+        document.form.olddatefour.value = document.form.datefour.value
+        document.form.olddatefive.value = document.form.datefive.value
+        document.form.olddatesix.value = document.form.datesix.value
+        document.form.olddateseven.value = document.form.dateseven.value
+        document.form.olddateeight.value = document.form.dateeight.value
+        document.form.olddatenine.value = document.form.datenine.value
+        document.form.olddateten.value = document.form.dateten.value
+    }
+
+    function CopyPay(){
+        document.form.oldpayone.value = document.form.payone.value
+        document.form.oldpaytwo.value = document.form.paytwo.value
+        document.form.oldpaythree.value = document.form.paythree.value
+        document.form.oldpayfour.value = document.form.payfour.value
+        document.form.oldpayfive.value = document.form.payfive.value
+        document.form.oldpaysix.value = document.form.paysix.value
+        document.form.oldpayseven.value = document.form.payseven.value
+        document.form.oldpayeight.value = document.form.payeight.value
+        document.form.oldpaynine.value = document.form.paynine.value
+        document.form.oldpayten.value = document.form.payten.value
+        document.form.oldagpone.value = document.form.agpone.value
+        document.form.oldagptwo.value = document.form.agptwo.value
+        document.form.oldagpthree.value = document.form.agpthree.value
+        document.form.oldagpfour.value = document.form.agpfour.value
+        document.form.oldagpfive.value = document.form.agpfive.value
+        document.form.oldagpsix.value = document.form.agpsix.value
+        document.form.oldagpseven.value = document.form.agpseven.value
+        document.form.oldagpeight.value = document.form.agpeight.value
+        document.form.oldagpnine.value = document.form.agpnine.value
+        document.form.oldagpten.value = document.form.agpten.value
+    }
+
+    function CopyHC(){
+        document.form.oldhcdateone.value = document.form.hcdateone.value
+        document.form.oldhcdatetwo.value = document.form.hcdatetwo.value
+        document.form.oldhcdatethree.value = document.form.hcdatethree.value
+        document.form.oldhcdatefour.value = document.form.hcdatefour.value
+        document.form.oldhcdatefive.value = document.form.hcdatefive.value
+        document.form.oldhraone.value = document.form.hraone.value
+        document.form.oldhratwo.value = document.form.hratwo.value
+        document.form.oldhrathree.value = document.form.hrathree.value
+        document.form.oldhrafour.value = document.form.hrafour.value
+        document.form.oldhrafive.value = document.form.hrafive.value
+        document.form.oldccaone.value = document.form.ccaone.value
+        document.form.oldccatwo.value = document.form.ccatwo.value
+        document.form.oldccathree.value = document.form.ccathree.value
+        document.form.oldccafour.value = document.form.ccafour.value
+        document.form.oldccafive.value = document.form.ccafive.value
+    }
+
+
+
+
+</script>

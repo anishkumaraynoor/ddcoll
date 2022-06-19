@@ -53,7 +53,9 @@ module.exports={
                     pin:itemDetails.pin,
                     joining:itemDetails.joining,
                     retirement:itemDetails.retirement,
-                    treasury:itemDetails.treasury
+                    treasury:itemDetails.treasury,
+                    staffname:itemDetails.staffname
+
                 }
             }).then((response)=>{
                 resolve()
