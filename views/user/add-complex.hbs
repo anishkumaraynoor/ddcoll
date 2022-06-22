@@ -15,7 +15,7 @@
                     <div>
                         <h2 class="text-center mb-4">ELS Calculator (Complex)</h2>
                     </div>
-                    <form action="" method="" name="form">
+                    <form action="/view-els" method="POST" name="form">
 
                         <div class="form-group row">
                             <label for="colFormLabel" class="col-sm-2 col-form-label">OB Date</label>
@@ -89,9 +89,21 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">OB Full List</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="obfulllist" name="obfulllist">
+                                <input type="text" class="form-control" id="eventlist" name="eventlist">
+                                <input type="text" class="form-control" id="leavefromlist" name="leavefromlist">
+                                <input type="text" class="form-control" id="leavetolist" name="leavetolist">
+                            </div>
+                        </div>
 
-                        <a onclick="Next()" class="btn btn-success" id="">Next</a>                     
 
+                        <a onclick="Next()" class="btn btn-success" id="">Next</a>
+                        <button type="submit" value="submit" class="btn btn-primary">PRINT</button>
+
+                        
                         
 
                     </form>
@@ -105,8 +117,13 @@
         document.getElementById('cbdate').readOnly = true;
         document.getElementById('cb').readOnly = true;
 
+        var obfulllist = Array();
+        var eventlist = Array();
+        var leavefromlist = Array();
+        var leavetolist = Array();
+
         function Add(){
-            
+  
             var datef = document.form.obdate.value;
             var datet = document.form.to.value;
             var fdate = new Date(datef);
@@ -199,12 +216,18 @@
 
             document.form.days.value = leavedays;
 
+
+            
+
+
             }
 
 
 
-        function Next(){
+        function Next(){   
             
+                           
+
             var datecb = document.form.cbdate.value;
             var cbdate = new Date(datecb);               
             
@@ -218,14 +241,32 @@
             var formatteddate = yy + '-'+ mm + '-'+ dd;
             document.form.obdate.value = formatteddate;
 
+            var listobfull = document.form.obfull.value;
             
             document.form.obfull.value = document.form.cbfull.value;
             document.form.fraction.value = document.form.cbf.value;
+
+            
+            var listevent = document.form.event.value;
+            var listleavefrom = document.form.from.value;
+            var listleaveto = document.form.to.value;
+            obfulllist.push(listobfull);
+            eventlist.push(listevent);
+            leavefromlist.push(listleavefrom);
+            leavetolist.push(listleaveto);
+            document.form.obfulllist.value = obfulllist;
+            document.form.eventlist.value = eventlist;
+            document.form.leavefromlist.value = leavefromlist;
+            document.form.leavetolist.value = leavetolist;
+
+            
+            
 
             document.form.days.value = null;
             document.form.from.value = null;
             document.form.to.value = null;
 
+            
 
         }
 
@@ -239,6 +280,14 @@
             }              
                 
             }
+
+        function Print(){
+
+            
+        
+            
+
+        }    
 
           
     </script>

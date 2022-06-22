@@ -10,6 +10,7 @@ const pensionHelpers = require('../helpers/pension-helpers');
 const arrearHelpers = require('../helpers/arrear-helpers');
 const ntsarrearHelpers = require('../helpers/ntsarrear-helpers');
 const arrearsHelpers = require('../helpers/arrears-helpers')
+const elsHelpers = require('../helpers/els-helpers')
 var router = express.Router();
 
 /* GET home page. */
@@ -229,6 +230,13 @@ router.post('/view-arrears', (req, res) => {
     var arrear = grand.items;
     var total = grand.total;
     res.render('user/view-arrears',{arrear,total});
+  })
+});
+
+router.post('/view-els', (req, res) => {
+  elsHelpers.elsWork(req.body).then((elsdata) => {
+    console.log(elsdata);
+    res.render('user/view-els',{elsdata});
   })
 });
 

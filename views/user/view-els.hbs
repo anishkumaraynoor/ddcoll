@@ -1,0 +1,33 @@
+<section>
+
+
+
+        
+
+
+        <table class="table" id="datatable">
+            <thead>
+                <tr>
+                    <th scope="col">OB Full</th>
+                    <th scope="col">Event</th>
+                    <th scope="col">From</th>
+                    <th scope="col">To</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                {{#each elsdata}}
+                <tr>
+                    <td>{{this.obfull}}</td>
+                    <td>{{this.event}}</td>
+                    <td>{{this.leavefrom}}</td>
+                    <td>{{this.leaveto}}</td>
+                    
+                   
+                </tr>
+                {{/each}}
+                
+            </tbody>
+        </table>
+
+</section>
