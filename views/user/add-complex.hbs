@@ -13,7 +13,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div>
-                        <h2 class="text-center mb-4">ELS Calculator (Complex)</h2>
+                        <h2 class="text-center mb-4">ELS Calculator</h2>
                     </div>
                     <form action="/view-els" method="POST" name="form">
 
@@ -78,30 +78,48 @@
                             </div>
                         </div>
 
-                        <div class="form-group row invisible">
-                            <label for="" class="col-sm-2 col-form-label">CB Full</label>
-                            <div class="col-sm-4 invisible">
+                        <div class="form-group row ">
+                            <div class="col-sm-3 ">
                                 <input type="text" class="form-control" id="cbfull" name="cbfull">
                             </div>
-                            <label for="" class="col-sm-2 col-form-label">CBF</label>
-                            <div class="col-sm-4 invisible">
+                            <div class="col-sm-3 ">
                                 <input type="text" class="form-control" id="cbf" name="cbf">
+                            </div>
+                            <div class="col-sm-3 ">
+                                <input type="text" class="form-control" id="ob" name="ob">
+                            </div>
+                            <div class="col-sm-3 ">
+                                <input type="text" class="form-control" id="total" name="total">
                             </div>
                         </div>
 
-                        <div class="form-group row">
-                            <label for="" class="col-sm-2 col-form-label">OB Full List</label>
-                            <div class="col-sm-4">
-                                <input type="text" class="form-control" id="obfulllist" name="obfulllist">
+                        <a onclick="Next()" class="btn btn-success" id="">Next</a>
+                        <a onclick="Back()" class="btn btn-success" id="">Back</a>
+                        <button type="submit" value="submit" class="btn btn-primary">PRINT</button>
+
+                        <div class="form-group row ">                    
+                            <div class="col-sm-12">
+                                <input type="text" class="form-control" id="oblist" name="oblist">
+                                <input type="text" class="form-control" id="creditfromlist" name="creditfromlist">
+                                <input type="text" class="form-control" id="credittolist" name="credittolist">
+                                <input type="text" class="form-control" id="creditdayslist" name="creditdayslist">
+                                <input type="text" class="form-control" id="creditlist" name="creditlist">
+                                <input type="text" class="form-control" id="totallist" name="totallist">
                                 <input type="text" class="form-control" id="eventlist" name="eventlist">
                                 <input type="text" class="form-control" id="leavefromlist" name="leavefromlist">
                                 <input type="text" class="form-control" id="leavetolist" name="leavetolist">
+                                <input type="text" class="form-control" id="leavedayslist" name="leavedayslist">
+                                <input type="text" class="form-control" id="cblist" name="cblist">
+                                <input type="text" class="form-control" id="cbdatelist" name="cbdatelist">
+                                <input type="text" class="form-control" id="duty" name="duty">
+                                <input type="text" class="form-control" id="credit" name="credit">
+                                <input type="text" class="form-control" id="ldays" name="ldays">
+                                <input type="text" class="form-control" id="cbd" name="cbd">
                             </div>
                         </div>
 
 
-                        <a onclick="Next()" class="btn btn-success" id="">Next</a>
-                        <button type="submit" value="submit" class="btn btn-primary">PRINT</button>
+                        
 
                         
                         
@@ -117,10 +135,18 @@
         document.getElementById('cbdate').readOnly = true;
         document.getElementById('cb').readOnly = true;
 
-        var obfulllist = Array();
+        var oblist = Array();
+        var creditfromlist = Array();
+        var credittolist = Array();
+        var creditdayslist = Array();
+        var creditlist = Array();
+        var totallist = Array();
         var eventlist = Array();
         var leavefromlist = Array();
         var leavetolist = Array();
+        var leavedayslist = Array();
+        var cblist = Array();
+        var cbdatelist = Array();
 
         function Add(){
   
@@ -172,6 +198,25 @@
             var leave = ol+el;            
             var debit = el+sur;         
             var duty = perioddays-leave;
+            document.form.duty.value = duty;
+
+            
+
+            if(document.form.event.value == "EL Surrender"){
+                var daysl = document.form.days.value;
+                var ldays = daysl;
+            }else{
+                var ldays = leave;
+            }
+            document.form.ldays.value = ldays;
+            
+
+            
+            var listcreditfull = (duty-duty%11)/11;
+            var dutyf = duty%11;
+            var credit = listcreditfull+"  "+dutyf+"/11";
+            document.form.credit.value = credit;
+            
             
 
             var obfull = document.form.obfull.value;
@@ -180,12 +225,27 @@
             if(!fraction){fraction = 0;}
 
             var obdays = eval(obfull*11+"+"+fraction);
+            var ob = obfull+"  "+fraction+"/11";
+            document.form.ob.value = ob;
+            
+
             var cbdays = duty+obdays-debit*11;
             var cbfull = (cbdays-cbdays%11)/11;
             var cbf = cbdays%11;
             var cb = cbfull+"  "+cbf+"/11";
-            
             document.form.cb.value = cb;
+
+            var totaldays = duty+obdays;
+            var totalfull = (totaldays-totaldays%11)/11;
+            var totalf = totaldays%11;
+            var total = totalfull+"  "+totalf+"/11";
+            document.form.total.value = total;
+
+
+
+
+
+
 
             if(document.form.event.value == "EL Surrender"){
             var datesur = document.form.from.value;
@@ -199,12 +259,24 @@
             var yy = surdate.getFullYear();
 
             var formatdate = yy + '-'+ mm + '-'+ dd;
-            document.form.cbdate.value = formatdate;
-
+            document.form.cbdate.value = formatdate;  
             }else{
                 document.form.cbdate.value = dateto;
             }
+
+            var datecb = document.form.cbdate.value;
+            var cbdate = new Date(datecb);               
+            cbdate.setDate(cbdate.getDate());
+            var ddcb = "0"+cbdate.getDate();
+            var mmcb = "0"+(cbdate.getMonth() + 1);
+            mmcb = mmcb.slice(-2);
+            ddcb = ddcb.slice(-2);
+            var yycb = cbdate.getFullYear();
+            var cbd = ddcb + '-'+ mmcb + '-'+ yycb;
+            document.form.cbd.value = cbd;
             
+
+
 
             document.form.cbfull.value = cbfull;
             document.form.cbf.value = cbf;
@@ -213,61 +285,160 @@
             document.getElementById('obfull').readOnly = true;
             document.getElementById('fraction').readOnly = true;
 
-
             document.form.days.value = leavedays;
-
-
-            
-
 
             }
 
 
 
-        function Next(){   
+        function Next(){ 
+            var listob = document.form.ob.value;
+            oblist.push(listob);
+            document.form.oblist.value = oblist; 
+            var listcreditdays = document.form.duty.value;
+            creditdayslist.push(listcreditdays);
+            document.form.creditdayslist.value = creditdayslist; 
+            var listcredit = document.form.credit.value;
+            creditlist.push(listcredit);
+            document.form.creditlist.value = creditlist;
+            var listleavedays = document.form.ldays.value;
+            leavedayslist.push(listleavedays);
+            document.form.leavedayslist.value = leavedayslist;
+            var listcbdate = document.form.cbd.value;
+            cbdatelist.push(listcbdate);
+            document.form.cbdatelist.value = cbdatelist;
             
-                           
+
+
+            var creditf = document.form.obdate.value;
+            var fcredit = new Date(creditf)
+            fcredit.setDate(fcredit.getDate());
+            var ddfc = "0"+fcredit.getDate();
+            var mmfc = "0"+(fcredit.getMonth() + 1);
+            mmfc = mmfc.slice(-2);
+            ddfc = ddfc.slice(-2);
+            var yyfc = fcredit.getFullYear();
+            var listcreditfrom = ddfc + '-'+ mmfc + '-'+ yyfc;
+            
+
 
             var datecb = document.form.cbdate.value;
             var cbdate = new Date(datecb);               
-            
             cbdate.setDate(cbdate.getDate() + 1);
             var dd = "0"+cbdate.getDate();
             var mm = "0"+(cbdate.getMonth() + 1);
             mm = mm.slice(-2);
             dd = dd.slice(-2);
             var yy = cbdate.getFullYear();
-
             var formatteddate = yy + '-'+ mm + '-'+ dd;
             document.form.obdate.value = formatteddate;
 
-            var listobfull = document.form.obfull.value;
+            
             
             document.form.obfull.value = document.form.cbfull.value;
             document.form.fraction.value = document.form.cbf.value;
+                    
+                             
+            var creditt = document.form.from.value;
+            var tcredit = new Date(creditt);
+            tcredit.setDate(tcredit.getDate() - 1);
+            var ddtc = "0"+tcredit.getDate();
+            var mmtc = "0"+(tcredit.getMonth() + 1);
+            mmtc = mmtc.slice(-2);
+            ddtc = ddtc.slice(-2);
+            var yytc = tcredit.getFullYear();
+            var formatteddatetc = ddtc + '-'+ mmtc + '-'+ yytc;
+            var listcreditto = formatteddatetc;
 
-            
+
             var listevent = document.form.event.value;
-            var listleavefrom = document.form.from.value;
-            var listleaveto = document.form.to.value;
-            obfulllist.push(listobfull);
+
+            var leavef = document.form.from.value;
+            var fleave = new Date(leavef);
+            fleave.setDate(fleave.getDate());
+            var ddfl = "0"+fleave.getDate();
+            var mmfl = "0"+(fleave.getMonth() + 1);
+            mmfl = mmfl.slice(-2);
+            ddfl = ddfl.slice(-2);
+            var yyfl = fleave.getFullYear();
+            var formatteddatefl = ddfl + '-'+ mmfl + '-'+ yyfl;
+            var listleavefrom = formatteddatefl;
+
+            if(document.form.event.value == "EL Surrender"){
+                var leaveto = document.form.days.value;
+                var listleaveto = "-";
+            }else{
+                var leavet = document.form.to.value;
+                var tleave = new Date(leavet);
+                fleave.setDate(tleave.getDate());
+                var ddtl = "0"+tleave.getDate();
+                var mmtl = "0"+(tleave.getMonth() + 1);
+                mmtl = mmtl.slice(-2);
+                ddtl = ddtl.slice(-2);
+                var yytl = tleave.getFullYear();
+                var formatteddatetl = ddtl + '-'+ mmtl + '-'+ yytl;
+                var listleaveto = formatteddatetl;
+            }
+            
+
+
+            var listcb = document.form.cb.value;
+            var listtotal = document.form.total.value;
+
+            creditfromlist.push(listcreditfrom);
+            credittolist.push(listcreditto);  
             eventlist.push(listevent);
             leavefromlist.push(listleavefrom);
             leavetolist.push(listleaveto);
-            document.form.obfulllist.value = obfulllist;
+            cblist.push(listcb);
+            totallist.push(listtotal);
+            document.form.creditfromlist.value = creditfromlist;
+            document.form.credittolist.value = credittolist;
             document.form.eventlist.value = eventlist;
             document.form.leavefromlist.value = leavefromlist;
             document.form.leavetolist.value = leavetolist;
+            document.form.cblist.value = cblist;
+            document.form.totallist.value = totallist;
 
             
             
-
             document.form.days.value = null;
             document.form.from.value = null;
             document.form.to.value = null;
 
             
 
+        }
+
+        function Back(){
+            oblist.pop();
+            creditfromlist.pop();
+            credittolist.pop();
+            creditdayslist.pop();
+            creditlist.pop();
+            totallist.pop();
+            eventlist.pop();
+            leavefromlist.pop();
+            leavetolist.pop();
+            leavedayslist.pop();
+            cblist.pop();
+            cbdatelist.pop();
+            document.form.oblist.value = oblist;
+            document.form.creditfromlist.value = creditfromlist;
+            document.form.credittolist.value = credittolist;
+            document.form.creditdayslist.value = creditdayslist;
+            document.form.creditlist.value = creditlist;
+            document.form.totallist.value = totallist;
+            document.form.eventlist.value = eventlist;
+            document.form.leavefromlist.value = leavefromlist;
+            document.form.leavetolist.value = leavetolist;
+            document.form.leavedayslist.value = leavedayslist;
+            document.form.cblist.value = cblist;
+            document.form.cbdatelist.value = cbdatelist;
+            
+            
+            
+            
         }
 
         function Select(){  
@@ -281,15 +452,6 @@
                 
             }
 
-        function Print(){
-
-            
-        
-            
-
-        }    
-
-          
     </script>
    
 

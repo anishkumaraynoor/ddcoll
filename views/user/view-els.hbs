@@ -8,22 +8,36 @@
         <table class="table" id="datatable">
             <thead>
                 <tr>
-                    <th scope="col">OB Full</th>
-                    <th scope="col">Event</th>
+                    <th scope="col">OB</th>
                     <th scope="col">From</th>
                     <th scope="col">To</th>
+                    <th scope="col">Days</th>
+                    <th scope="col">EL</th>
+                    <th scope="col">Total</th>
+                    <th scope="col">Leave</th>
+                    <th scope="col">From</th>
+                    <th scope="col">To</th>
+                    <th scope="col">Days</th>
+                    <th scope="col">CB</th>
+                    <th scope="col">CB Date</th>
                     
                 </tr>
             </thead>
             <tbody>
                 {{#each elsdata}}
                 <tr>
-                    <td>{{this.obfull}}</td>
+                    <td>{{this.ob}}</td>
+                    <td>{{this.creditfrom}}</td>
+                    <td>{{this.creditto}}</td>
+                    <td>{{this.creditdays}}</td>
+                    <td>{{this.credit}}</td>
+                    <td>{{this.total}}</td>
                     <td>{{this.event}}</td>
                     <td>{{this.leavefrom}}</td>
                     <td>{{this.leaveto}}</td>
-                    
-                   
+                    <td>{{this.leavedays}}</td>
+                    <td>{{this.cb}}</td>
+                    <td>{{this.cbdate}}</td>                  
                 </tr>
                 {{/each}}
                 
