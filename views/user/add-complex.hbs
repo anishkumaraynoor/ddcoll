@@ -78,7 +78,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group row ">
+                        <div class="form-group row invisible">
                             <div class="col-sm-3 ">
                                 <input type="text" class="form-control" id="cbfull" name="cbfull">
                             </div>
@@ -97,7 +97,7 @@
                         <a onclick="Back()" class="btn btn-success" id="">Back</a>
                         <button type="submit" value="submit" class="btn btn-primary">PRINT</button>
 
-                        <div class="form-group row ">                    
+                        <div class="form-group row invisible">                    
                             <div class="col-sm-12">
                                 <input type="text" class="form-control" id="oblist" name="oblist">
                                 <input type="text" class="form-control" id="creditfromlist" name="creditfromlist">
@@ -111,6 +111,8 @@
                                 <input type="text" class="form-control" id="leavedayslist" name="leavedayslist">
                                 <input type="text" class="form-control" id="cblist" name="cblist">
                                 <input type="text" class="form-control" id="cbdatelist" name="cbdatelist">
+                                <input type="text" class="form-control" id="cbfulllist" name="cbfulllist">
+                                <input type="text" class="form-control" id="cbflist" name="cbflist">
                                 <input type="text" class="form-control" id="duty" name="duty">
                                 <input type="text" class="form-control" id="credit" name="credit">
                                 <input type="text" class="form-control" id="ldays" name="ldays">
@@ -147,6 +149,8 @@
         var leavedayslist = Array();
         var cblist = Array();
         var cbdatelist = Array();
+        var cbfulllist = Array();
+        var cbflist = Array();
 
         function Add(){
   
@@ -307,6 +311,14 @@
             var listcbdate = document.form.cbd.value;
             cbdatelist.push(listcbdate);
             document.form.cbdatelist.value = cbdatelist;
+
+            var listcbfull = document.form.cbfull.value;
+            cbfulllist.push(listcbfull);
+            document.form.cbfulllist.value = cbfulllist;
+
+            var listcbf = document.form.cbf.value;
+            cbflist.push(listcbf);
+            document.form.cbflist.value = cbflist;
             
 
 
@@ -411,6 +423,23 @@
         }
 
         function Back(){
+
+            
+                      
+            document.form.obfull.value = cbfulllist[cbfulllist.length-2];
+            document.form.fraction.value = cbflist[cbflist.length-2];
+            document.form.cb.value = cblist[cblist.length-2];
+           
+            var cflist = Array();
+            cflist = creditfromlist[creditfromlist.length-1].split('-');
+            document.form.obdate.value = cflist[2] + '-'+ cflist[1] + '-'+ cflist[0];
+            var cbdlist = Array();
+            cbdlist = cbdatelist[cbdatelist.length-2].split('-');
+            document.form.cbdate.value = cbdlist[2] + '-'+ cbdlist[1] + '-'+ cbdlist[0];
+            
+
+            
+
             oblist.pop();
             creditfromlist.pop();
             credittolist.pop();
@@ -423,6 +452,8 @@
             leavedayslist.pop();
             cblist.pop();
             cbdatelist.pop();
+            cbfulllist.pop();
+            cbflist.pop();
             document.form.oblist.value = oblist;
             document.form.creditfromlist.value = creditfromlist;
             document.form.credittolist.value = credittolist;
@@ -435,9 +466,11 @@
             document.form.leavedayslist.value = leavedayslist;
             document.form.cblist.value = cblist;
             document.form.cbdatelist.value = cbdatelist;
+            document.form.cbfulllist.value = cbfulllist;
+            document.form.cbflist.value = cbflist;
+
             
-            
-            
+  
             
         }
 
