@@ -1,0 +1,205 @@
+
+
+
+
+
+
+
+
+
+    
+    <section>
+        
+        <div class="container">
+        <div class="row mt-4">
+            <a href="/view-advance" class="btn btn-success ml-auto">View Advance</a>
+        </div>
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-md-6">
+                    <form action="/add-advance" method="POST" name="form">
+
+                        <div class="form-group row">
+                            <label for="colFormLabel" class="col-sm-2 col-form-label">File No.</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="colFormLabel" placeholder="" name="fileno">
+                            </div>
+                            <label for="colFormLabel" class="col-sm-2 col-form-label">Date</label>
+                            <div class="col-sm-4">
+                                <input type="date" class="form-control" id="colFormLabel" placeholder="" name="date">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="colFormLabel" class="col-sm-2 col-form-label">College</label>
+                            <div class="col-sm-10">
+                                <select class="form-control" id="college" name="college">
+                                {{#each colleges}}
+                                <option id="{{this.treasury}}" value="{{this.college}}">{{this.college}}</option>
+                                {{/each}}
+                            </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">Name</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="" name="name">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">Designation</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="" name="designation">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-1 col-form-label">PEN</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="" name="pen">
+                            </div>
+                            <label for="" class="col-sm-1 col-form-label">PFN</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="" name="pfno">
+                            </div>
+                            <label for="" class="col-sm-1 col-form-label">BP</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="" name="basic">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-sm-3 col-form-label">Prev Advance</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="" name="preadvance">
+                            </div>
+                            <label for="" class="col-sm-3 col-form-label">Date of Drawal</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="" name="drawdate">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-sm-3 col-form-label">Prev No.</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="" name="preno">
+                            </div>
+                            <label for="" class="col-sm-3 col-form-label">Prev Date</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="" name="predate">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">Amount</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="" name="amount">
+                            </div>
+                            <label for="" class="col-sm-2 col-form-label">Object</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="" name="object">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-4 col-form-label">Balance at Credit</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="" name="credit">
+                            </div>
+                            <label for="" class="col-sm-3 col-form-label">Last Month</label>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control" id="" name="lastmonth">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-sm-7 col-form-label">Balance of Previous Advance</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" id="" name="prebalance">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group row">
+                            <label for="" class="col-sm-3 col-form-label">Subscription</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="" name="subscription">
+                            </div>
+                            <label for="" class="col-sm-3 col-form-label">Refund</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="" name="refund">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-3 col-form-label">Arrears</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="" name="arrears">
+                            </div>
+                            <label for="" class="col-sm-3 col-form-label">Not Allowed</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="" name="notallowed">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-3 col-form-label">Credit Card</label>
+                            <div class="col-sm-3">
+                                <select class="form-control" id="exampleFormControlSelect1" name="ccyear">
+                                <option>2015-16</option>
+                                <option>2016-17</option>
+                                <option>2017-18</option>
+                                <option>2018-19</option>
+                                <option>2019-20</option>
+                                <option>2020-21</option>
+                                <option>2021-22</option>
+                            </select>
+                            </div>
+                            <label for="" class="col-sm-4 col-form-label">No. of Instalments</label>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control" id="" name="instalments">
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">Lr No</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="" name="lrno">
+                            </div>
+                            <label for="" class="col-sm-2 col-form-label">Lr Date</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="" name="lrdate">
+                            </div>
+                        </div>
+
+                        <a onclick="Add()" class="btn btn-success" id="">OK</a>
+                        <button type="submit" class="btn btn-primary" >SAVE</button>
+
+                        <div class="form-group row invisible">
+                            <label for="" class="col-sm-5 col-form-label">Treasury</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control" id="treasury" name="treasury">
+                            </div>
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        function Add(){
+            var collsel = document.getElementById('college');
+            var collegeid = collsel.options[collsel.selectedIndex].id;
+            document.form.treasury.value = collegeid;
+            if(!document.form.prebalance.value){document.form.prebalance.value = 0;}
+            if(!document.form.subscription.value){document.form.subscription.value = 0;}
+            if(!document.form.refund.value){document.form.refund.value = 0;}
+            if(!document.form.notallowed.value){document.form.notallowed.value = 0;}
+            if(!document.form.instalments.value){document.form.instalments.value = 0;}
+            
+        }
+          
+    </script>
+   
+
+    

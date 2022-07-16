@@ -10,6 +10,18 @@ var b = ['', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eigh
 
 module.exports = {
   printWork: (body, pagename, res) => {
+    var consolidated = eval(body.amount+"+"+body.prebalance);
+    var instalmentamount = eval(consolidated+"/"+body.instalments);
+    var allowed = eval(body.arrears+"-"+body.notallowed);
+    var total = eval(body.credit+"+"+body.subscription+"+"+body.refund+"+"+allowed+"-"+body.prebalance);
+    var remitted = eval(body.preadvance+"-"+body.prebalance);
+    var permissible = eval((total+"*"+3+"-"+body.prebalance)+"/"+4);
+    var repayment = "being repaid";
+    if (body.prebalance == 0){
+      repayment = "";
+    }
+    var firstmonth = "4/"+body.ccyear.substr(5,2);
+
     var staff = body.staff;
     if (staff === "TS") {
       stafffull = "Teaching Staff";
@@ -93,7 +105,35 @@ module.exports = {
       lrno: body.lrno,
       lrdate: body.lrdate,
       colno: body.colno,
-      coldate: body.coldate
+      coldate: body.coldate,
+      pen:body.pen,
+      pfno:body.pfno,
+      basic:body.basic,
+      preadvance:body.preadvance,
+      drawdate:body.drawdate,
+      preno:body.preno,
+      predate:body.predate,
+      amount:body.amount,
+      object:body.object,
+      credit:body.credit,
+      prebalance:body.prebalance,
+      subscription:body.subscription,
+      refund:body.refund,
+      arrears:body.arrears,
+      notallowed:body.notallowed,
+      ccyear:body.ccyear,
+      instalments:body.instalments,
+      consolidated:consolidated,
+      instalmentamount:instalmentamount,
+      allowed:allowed,
+      total:total,
+      remitted:remitted,
+      permissible:permissible,
+      repayment:repayment,
+      lastmonth: body.lastmonth,
+      firstmonth: firstmonth
+
+
     });
 
     try {

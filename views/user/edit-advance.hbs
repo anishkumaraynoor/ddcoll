@@ -1,0 +1,176 @@
+    <section>
+        <div class="container">
+        <div class="row mt-4">
+
+
+
+
+
+
+            <a href="/view-advance" class="btn btn-success ml-auto">View Advance</a>
+        </div>
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-md-6">
+                    <form action="/edit-advance/{{advance._id}}" method="POST" name="form">
+
+                        <div class="form-group row">
+                            <label for="colFormLabel" class="col-sm-2 col-form-label">File No.</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="colFormLabel" placeholder="" name="fileno" value="{{advance.fileno}}">
+                            </div>
+                            <label for="colFormLabel" class="col-sm-2 col-form-label">Date</label>
+                            <div class="col-sm-4">
+                                <input type="date" class="form-control" id="colFormLabel" placeholder="" name="date" value="{{advance.date}}">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="colFormLabel" class="col-sm-2 col-form-label">College</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="" name="college" value="{{advance.college}}">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">Name</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="" name="name" value="{{advance.name}}">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">Designation</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="" name="designation" value="{{advance.designation}}">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-1 col-form-label">PEN</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="" name="pen" value="{{advance.pen}}">
+                            </div>
+                            <label for="" class="col-sm-1 col-form-label">PFN</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="" name="pfno" value="{{advance.pfno}}">
+                            </div>
+                            <label for="" class="col-sm-1 col-form-label">BP</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="" name="basic" value="{{advance.basic}}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-sm-3 col-form-label">Prev Advance</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="" name="preadvance" value="{{advance.preadvance}}">
+                            </div>
+                            <label for="" class="col-sm-3 col-form-label">Date of Drawal</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="" name="drawdate" value="{{advance.drawdate}}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-sm-3 col-form-label">Prev No.</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="" name="preno" value="{{advance.preno}}">
+                            </div>
+                            <label for="" class="col-sm-3 col-form-label">Prev Date</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="" name="predate" value="{{advance.predate}}">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">Amount</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="" name="amount" value="{{advance.amount}}">
+                            </div>
+                            <label for="" class="col-sm-2 col-form-label">Object</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="" name="object" value="{{advance.object}}">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-7 col-form-label">Balance at Credit</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" id="" name="credit" value="{{advance.credit}}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-sm-7 col-form-label">Balance of Previous Advance</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" id="" name="prebalance" value="{{advance.prebalance}}">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group row">
+                            <label for="" class="col-sm-3 col-form-label">Subscription</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="" name="subscription" value="{{advance.subscription}}">
+                            </div>
+                            <label for="" class="col-sm-3 col-form-label">Refund</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="" name="refund" value="{{advance.refund}}">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-3 col-form-label">Arrears</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="" name="arrears" value="{{advance.arrears}}">
+                            </div>
+                            <label for="" class="col-sm-3 col-form-label">Not Allowed</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="" name="notallowed" value="{{advance.notallowed}}">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-3 col-form-label">Credit Card</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="" name="ccyear" value="{{advance.ccyear}}">
+                            </div>
+                            <label for="" class="col-sm-4 col-form-label">No. of Instalments</label>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control" id="" name="instalments" value="{{advance.instalments}}">
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">Lr No</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="" name="lrno" value="{{advance.lrno}}">
+                            </div>
+                            <label for="" class="col-sm-2 col-form-label">Lr Date</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="" name="lrdate" value="{{advance.lrdate}}">
+                            </div>
+                        </div>
+
+                        <a onclick="Add()" class="btn btn-success" id="">OK</a>
+                        <button type="submit" class="btn btn-primary" >SAVE</button>
+                        
+                        <div class="form-group row invisible">
+                            <label for="" class="col-sm-2 col-form-label">Treasury</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="treasury" name="treasury" value="{{advance.treasury}}">
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        function Add(){
+        }
+          
+    </script>
+   
+
+    

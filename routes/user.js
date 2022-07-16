@@ -7,6 +7,7 @@ const productHelpers = require('../helpers/product-helpers');
 const userHelpers = require('../helpers/user-helpers');
 const printHelpers = require('../helpers/print-helpers');
 const pensionHelpers = require('../helpers/pension-helpers');
+const advanceHelpers = require('../helpers/advance-helpers');
 const arrearHelpers = require('../helpers/arrear-helpers');
 const ntsarrearHelpers = require('../helpers/ntsarrear-helpers');
 const arrearsHelpers = require('../helpers/arrears-helpers')
@@ -189,6 +190,57 @@ router.post('/edit-pension/:id', async (req, res) => {
     printHelpers.printWork(req.body,page,res);
   })
 })
+
+router.get('/add-advance', function (req, res, next) {
+  let user = req.session.user;
+  productHelpers.getAllColleges().then((colleges) => {  
+      res.render('user/add-advance', { colleges, user });
+  })
+})
+
+router.post('/add-advance', (req, res) => {
+  var page = `../files/advance.docx`;
+  var collectname = collection.ADVANCE_COLLECTION;
+  advanceHelpers.addItem(req.body,collectname,(id) => {
+    printHelpers.printWork(req.body,page,res);
+  });
+});
+
+router.get('/view-advance', function (req, res, next) {
+  let user = req.session.user;
+  var collectname = collection.ADVANCE_COLLECTION;
+  advanceHelpers.getAllItems(collectname).then((advance) => {
+    res.render('user/view-advance', { advance, user });
+  })
+});
+
+router.get('/delete-advance/:id', (req, res) => {
+  let advanceId = req.params.id
+  var collectname = collection.ADVANCE_COLLECTION;
+  console.log(advanceId);
+  pensionHelpers.deleteItem(advanceId,collectname).then((response) => {
+    res.redirect('/view-advance')
+  })
+})
+router.get('/edit-advance/:id', async (req, res) => {
+  let user = req.session.user;
+  var collectname = collection.ADVANCE_COLLECTION;
+  let advance = await advanceHelpers.getItemDetails(req.params.id,collectname);
+  console.log(advance);
+  res.render('user/edit-advance', { advance, user })
+})
+
+router.post('/edit-advance/:id', async (req, res) => {
+  var page = `../files/advance.docx`;
+  var collectname = collection.ADVANCE_COLLECTION;
+  await advanceHelpers.updateItem(req.params.id,req.body,collectname).then(() => {
+    printHelpers.printWork(req.body,page,res);
+  })
+})
+
+
+
+
 
 router.get('/add-els', function (req, res, next) {
   let user = req.session.user;
