@@ -15,7 +15,7 @@ module.exports = {
     var allowed = eval(body.arrears+"-"+body.notallowed);
     var total = eval(body.credit+"+"+body.subscription+"+"+body.refund+"+"+allowed+"-"+body.preadvance);
     var remitted = eval(body.preadvance+"-"+body.prebalance);
-    var permissible = eval((total+"*"+3+"-"+body.prebalance)+"/"+4);
+    var permissible = eval(total+"*"+3+"-"+body.prebalance)/4;
     var repayment = "being repaid";
     if (body.prebalance == 0){
       repayment = "";
