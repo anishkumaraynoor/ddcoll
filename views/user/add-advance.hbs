@@ -172,7 +172,7 @@
                         </div>
 
                         <a onclick="Add()" class="btn btn-success" id="">OK</a>
-                        <button type="submit" class="btn btn-primary" >SAVE</button>
+                        <button type="submit" a onclick="Add()" class="btn btn-primary" >SAVE</button>
 
                         <div class="form-group row invisible">
                             <label for="" class="col-sm-5 col-form-label">Treasury</label>
@@ -191,11 +191,12 @@
             var collsel = document.getElementById('college');
             var collegeid = collsel.options[collsel.selectedIndex].id;
             document.form.treasury.value = collegeid;
-            if(!document.form.prebalance.value){document.form.prebalance.value = 0;}
+            if(!document.form.remitted.value){document.form.remitted.value = 0;}
             if(!document.form.subscription.value){document.form.subscription.value = 0;}
             if(!document.form.refund.value){document.form.refund.value = 0;}
             if(!document.form.notallowed.value){document.form.notallowed.value = 0;}
             if(!document.form.instalments.value){document.form.instalments.value = 0;}
+            if(!document.form.preadvance.value){document.form.preadvance.value = 0;}
             
         }
           

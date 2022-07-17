@@ -238,8 +238,12 @@ router.post('/edit-advance/:id', async (req, res) => {
   })
 })
 
-
-
+router.get('/add-teacher', function (req, res, next) {
+  let user = req.session.user;
+  productHelpers.getAllColleges().then((colleges) => {  
+      res.render('user/add-teacher', { colleges, user });
+  })
+})
 
 
 router.get('/add-els', function (req, res, next) {

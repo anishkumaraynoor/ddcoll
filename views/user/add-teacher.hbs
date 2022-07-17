@@ -1,0 +1,184 @@
+
+
+
+
+
+
+
+
+
+    
+    <section>
+        
+        <div class="container">
+        <div class="row mt-4">
+            <a href="/view-teacher" class="btn btn-success ml-auto">View Teacher</a>
+        </div>
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-md-6">
+                    <form action="/add-advance" method="POST" name="form">
+
+                        <div class="form-group row">
+                            <label for="colFormLabel" class="col-sm-2 col-form-label">File No.</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="colFormLabel" placeholder="" name="fileno">
+                            </div>
+                            <label for="colFormLabel" class="col-sm-2 col-form-label">Date</label>
+                            <div class="col-sm-4">
+                                <input type="date" class="form-control" id="colFormLabel" placeholder="" name="date">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="colFormLabel" class="col-sm-2 col-form-label">College</label>
+                            <div class="col-sm-10">
+                                <select class="form-control" id="college" name="college">
+                                {{#each colleges}}
+                                <option id="{{this.treasury}}" value="{{this.college}}">{{this.college}}</option>
+                                {{/each}}
+                            </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">Name</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="" name="name">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">Subject</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="" name="subject">
+                            </div>
+                        </div>
+
+                        
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">DOB</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="" name="birthdate">
+                            </div>
+                            <label for="" class="col-sm-4 col-form-label">Date of Appointment</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="" name="joindate">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">Workload</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="" name="workload">
+                            </div>
+                            <label for="" class="col-sm-4 col-form-label">Sanctioned Posts</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="" name="sanctioned">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-4 col-form-label">No. of Other TS</label>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control" id="" name="others">
+                            </div>
+                            <label for="" class="col-sm-4 col-form-label">Workload of Other TS</label>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control" id="" name="othersworkload">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-4 col-form-label">Balance Workload</label>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control" id="" name="balanceworkload">
+                            </div>
+                            <label for="" class="col-sm-4 col-form-label">Vacancy of TS</label>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control" id="" name="balanceteachers">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-sm-4 col-form-label">Nature of Vacancy</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="" name="remitted">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group row">
+                            <label for="" class="col-sm-3 col-form-label">Subscription</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="" name="subscription">
+                            </div>
+                            <label for="" class="col-sm-3 col-form-label">Refund</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="" name="refund">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-3 col-form-label">Arrears</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="" name="arrears">
+                            </div>
+                            <label for="" class="col-sm-3 col-form-label">Not Allowed</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="" name="notallowed">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-3 col-form-label">Credit Card</label>
+                            <div class="col-sm-3">
+                                <select class="form-control" id="exampleFormControlSelect1" name="ccyear">
+                                <option>2015-16</option>
+                                <option>2016-17</option>
+                                <option>2017-18</option>
+                                <option>2018-19</option>
+                                <option>2019-20</option>
+                                <option>2020-21</option>
+                                <option>2021-22</option>
+                            </select>
+                            </div>
+                            <label for="" class="col-sm-4 col-form-label">No. of Instalments</label>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control" id="" name="instalments">
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">Lr No</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="" name="lrno">
+                            </div>
+                            <label for="" class="col-sm-2 col-form-label">Lr Date</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="" name="lrdate">
+                            </div>
+                        </div>
+
+                        <a onclick="Add()" class="btn btn-success" id="">OK</a>
+                        <button type="submit" class="btn btn-primary" >SAVE</button>
+
+                        <div class="form-group row invisible">
+                            <label for="" class="col-sm-5 col-form-label">Treasury</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control" id="treasury" name="treasury">
+                            </div>
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        function Add(){
+            
+        }
+          
+    </script>
+   
+
+    
