@@ -6,6 +6,7 @@ const billtypeHelpers = require('../helpers/billtype-helpers');
 const productHelpers = require('../helpers/product-helpers');
 const userHelpers = require('../helpers/user-helpers');
 const printHelpers = require('../helpers/print-helpers');
+const advanceprintHelpers = require('../helpers/advanceprint-helpers');
 const pensionHelpers = require('../helpers/pension-helpers');
 const advanceHelpers = require('../helpers/advance-helpers');
 const arrearHelpers = require('../helpers/arrear-helpers');
@@ -202,7 +203,7 @@ router.post('/add-advance', (req, res) => {
   var page = `../files/advance.docx`;
   var collectname = collection.ADVANCE_COLLECTION;
   advanceHelpers.addItem(req.body,collectname,(id) => {
-    printHelpers.printWork(req.body,page,res);
+    advanceprintHelpers.printWork(req.body,page,res);
   });
 });
 
@@ -244,6 +245,14 @@ router.get('/add-teacher', function (req, res, next) {
       res.render('user/add-teacher', { colleges, user });
   })
 })
+
+router.post('/add-teacher', (req, res) => {
+  var page = `../files/teacherapproval.docx`;
+  var collectname = collection.TEACHER_COLLECTION;
+  advanceHelpers.addItem(req.body,collectname,(id) => {
+    printHelpers.printWork(req.body,page,res);
+  });
+});
 
 
 router.get('/add-els', function (req, res, next) {

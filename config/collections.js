@@ -10,5 +10,6 @@ module.exports={
     USER_COLLECTION:'user',
     FORM_COLLECTION:'form',
     PENSION_COLLECTION:'pension',
-    ADVANCE_COLLECTION: 'advance'
+    ADVANCE_COLLECTION: 'advance',
+    TEACHER_COLLECTION: 'teacher'
 }

@@ -17,7 +17,7 @@
         <div class="container mt-3">
             <div class="row">
                 <div class="col-md-6">
-                    <form action="/add-advance" method="POST" name="form">
+                    <form action="/add-teacher" method="POST" name="form">
 
                         <div class="form-group row">
                             <label for="colFormLabel" class="col-sm-2 col-form-label">File No.</label>
@@ -101,51 +101,194 @@
                         <div class="form-group row">
                             <label for="" class="col-sm-4 col-form-label">Nature of Vacancy</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="" name="remitted">
+                                <input type="text" class="form-control" id="" name="vacancynature">
                             </div>
                         </div>
                         
                         <div class="form-group row">
-                            <label for="" class="col-sm-3 col-form-label">Subscription</label>
-                            <div class="col-sm-3">
-                                <input type="text" class="form-control" id="" name="subscription">
-                            </div>
-                            <label for="" class="col-sm-3 col-form-label">Refund</label>
-                            <div class="col-sm-3">
-                                <input type="text" class="form-control" id="" name="refund">
-                            </div>
+                            <label for="" class="col-sm-7 col-form-label">News Paper</label>
+                            <label for="" class="col-sm-5 col-form-label">Date of Notification</label>
                         </div>
 
                         <div class="form-group row">
-                            <label for="" class="col-sm-3 col-form-label">Arrears</label>
-                            <div class="col-sm-3">
-                                <input type="text" class="form-control" id="" name="arrears">
-                            </div>
-                            <label for="" class="col-sm-3 col-form-label">Not Allowed</label>
-                            <div class="col-sm-3">
-                                <input type="text" class="form-control" id="" name="notallowed">
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="" class="col-sm-3 col-form-label">Credit Card</label>
-                            <div class="col-sm-3">
-                                <select class="form-control" id="exampleFormControlSelect1" name="ccyear">
-                                <option>2015-16</option>
-                                <option>2016-17</option>
-                                <option>2017-18</option>
-                                <option>2018-19</option>
-                                <option>2019-20</option>
-                                <option>2020-21</option>
-                                <option>2021-22</option>
+                            <div class="col-sm-7">
+                                <select class="form-control" id="exampleFormControlSelect1" name="paper1">
+                                <option>മാതൃഭൂമി</option>
+                                <option>മലയാള മനോരമ</option>
+                                <option>ദേശാഭിമാനി</option>
+                                <option>കേരള കൌമുദി</option>
+                                <option>ജനയുഗം</option>
+                                <option>ജന്മഭൂമി</option>
+                                <option>ചന്ദ്രിക</option>
+                                <option>വീക്ഷണം</option>
+                                <option>Indian Express</option>
+                                <option>The Hindu</option>
                             </select>
-                            </div>
-                            <label for="" class="col-sm-4 col-form-label">No. of Instalments</label>
-                            <div class="col-sm-2">
-                                <input type="text" class="form-control" id="" name="instalments">
+                            </div>  
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" id="" name="paperdate1">
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                            <div class="col-sm-7">
+                                <select class="form-control" id="exampleFormControlSelect1" name="paper2">
+                                <option>മാതൃഭൂമി</option>
+                                <option>മലയാള മനോരമ</option>
+                                <option>ദേശാഭിമാനി</option>
+                                <option>കേരള കൌമുദി</option>
+                                <option>ജനയുഗം</option>
+                                <option>ജന്മഭൂമി</option>
+                                <option>ചന്ദ്രിക</option>
+                                <option>വീക്ഷണം</option>
+                                <option>Indian Express</option>
+                                <option>The Hindu</option>
+                            </select>
+                            </div>  
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" id="" name="paperdate2">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-sm-7">
+                                <select class="form-control" id="exampleFormControlSelect1" name="paper3">
+                                <option>മാതൃഭൂമി</option>
+                                <option>മലയാള മനോരമ</option>
+                                <option>ദേശാഭിമാനി</option>
+                                <option>കേരള കൌമുദി</option>
+                                <option>ജനയുഗം</option>
+                                <option>ജന്മഭൂമി</option>
+                                <option>ചന്ദ്രിക</option>
+                                <option>വീക്ഷണം</option>
+                                <option>Indian Express</option>
+                                <option>The Hindu</option>
+                            </select>
+                            </div>  
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" id="" name="paperdate3">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-sm-7">
+                                <select class="form-control" id="exampleFormControlSelect1" name="paper4">
+                                <option>മാതൃഭൂമി</option>
+                                <option>മലയാള മനോരമ</option>
+                                <option>ദേശാഭിമാനി</option>
+                                <option>കേരള കൌമുദി</option>
+                                <option>ജനയുഗം</option>
+                                <option>ജന്മഭൂമി</option>
+                                <option>ചന്ദ്രിക</option>
+                                <option>വീക്ഷണം</option>
+                                <option>Indian Express</option>
+                                <option>The Hindu</option>
+                            </select>
+                            </div>  
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" id="" name="paperdate4">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-9 col-form-label">No. of Vacancy as per Notification</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="" name="papervacancy">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-3 col-form-label">Govt. Lr. No.</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="" name="govtlrno">
+                            </div>
+                            <label for="" class="col-sm-3 col-form-label">Govt. Lr. Date</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="" name="govtlrdate">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-5 col-form-label">Nominee Name</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control" id="" name="nomineename">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-sm-5 col-form-label">Nominee Designation</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control" id="" name="nomineedesignation">
+                            </div>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="ചെയര്‍മാന്‍" id="flexCheckDefault" name="chairman">
+                            <label class="form-check-label col-sm-3" for="flexCheckDefault">Chairman</label>
+                            <input class="form-check-input" type="checkbox" value="സര്‍ക്കാര്‍ നോമിനി" id="flexCheckDefault" name="govtnominee">
+                            <label class="form-check-label col-sm-4" for="flexCheckDefault">Govt. Nominee</label>
+                            <input class="form-check-input" type="checkbox" value="സബ്ജക്റ്റ് എക്സ്പെര്‍ട്ട്" id="flexCheckDefault" name="subjectexpert">
+                            <label class="form-check-label col-sm-4" for="flexCheckDefault">Subject Expert</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="മാനേജ്മെന്റ് നോമിനി" id="flexCheckDefault" name="managementnominee">
+                            <label class="form-check-label col-sm-7" for="flexCheckDefault">Management Nominee</label>
+                            <input class="form-check-input" type="checkbox" value="പ്രിന്‍സിപ്പാള്‍" id="flexCheckDefault" name="principal">
+                            <label class="form-check-label col-sm-4" for="flexCheckDefault">Principal</label>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-3 col-form-label">Interview Date</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="" name="interviewdate">
+                            </div>
+                            <label for="" class="col-sm-4 col-form-label">No. of Candidates</label>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control" id="" name="candidates">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">Category</label>
+                            <div class="col-sm-4">
+                                <select class="form-control" id="exampleFormControlSelect1" name="category">
+                                <option>ഓപ്പണ്‍ മെറിറ്റ്</option>
+                                <option>കമ്മ്യൂണിറ്റി മെറിറ്റ്</option>
+                            </select>
+                            </div> 
+                            <label for="" class="col-sm-4 col-form-label">No. of Rankholders</label> 
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control" id="" name="rankholders">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">Rank</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="" name="rank">
+                            </div>
+                            <label for="" class="col-sm-2 col-form-label">Management</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="" name="management">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-5 col-form-label">Excess Report</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control" id="" name="excessreport">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">Manager Lr No</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="" name="managerlrno">
+                            </div>
+                            <label for="" class="col-sm-2 col-form-label">Manager Lr Date</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="" name="managerlrdate">
+                            </div>
+                        </div>
 
                         <div class="form-group row">
                             <label for="" class="col-sm-2 col-form-label">Lr No</label>
