@@ -111,6 +111,14 @@
                                 <input type="text" class="form-control" id="" name="lastmonth">
                             </div>
                         </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-7 col-form-label">Previous Consolidated Advance</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" id="" name="preconsolidated">
+                            </div>
+                        </div>
+
                         <div class="form-group row">
                             <label for="" class="col-sm-7 col-form-label">Total Remittance to Previous Advance</label>
                             <div class="col-sm-5">
@@ -179,7 +187,7 @@
                         </div>
 
                         <a onclick="Add()" class="btn btn-success" id="">OK</a>
-                        <button type="submit" a onclick="Add()" class="btn btn-primary" >SAVE</button>
+                        <button type="submit" onclick="Add()" class="btn btn-primary" >SAVE</button>
 
                         <div class="form-group row invisible">
                             <label for="" class="col-sm-5 col-form-label">Treasury</label>
@@ -205,6 +213,7 @@
             if(!document.form.instalments.value){document.form.instalments.value = 0;}
             if(!document.form.preadvance.value){document.form.preadvance.value = 0;}
             if(!document.form.totaladvance.value){document.form.totaladvance.value = 0;}
+            if(!document.form.preconsolidated.value){document.form.preconsolidated.value = 0;}
             
         }
           

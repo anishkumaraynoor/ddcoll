@@ -55,18 +55,20 @@ module.exports={
                     amount:itemDetails.amount,
                     object:itemDetails.object,
                     credit:itemDetails.credit,
-                    prebalance:itemDetails.prebalance,
+                    lastmonth: itemDetails.lastmonth,
+                    preconsolidated: itemDetails.preconsolidated,
+                    remitted: itemDetails.remitted,
                     subscription:itemDetails.subscription,
                     refund:itemDetails.refund,
                     arrears:itemDetails.arrears,
                     notallowed:itemDetails.notallowed,
+                    totaladvance: itemDetails.totaladvance,
                     ccyear:itemDetails.ccyear,
                     instalments:itemDetails.instalments,
                     lrno:itemDetails.lrno,
-                    lrdate:itemDetails.lrdate,
-                    totaladvance: itemDetails.totaladvance,
-                    lastmonth: itemDetails.lastmonth,
-                    treasury: itemDetails.treasury
+                    lrdate:itemDetails.lrdate,                  
+                    treasury: itemDetails.treasury,
+                   
                     
 
                 }

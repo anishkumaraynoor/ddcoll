@@ -10,7 +10,7 @@ var b = ['', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eigh
 
 module.exports = {
   printWork: (body, pagename, res) => {
-    var prebalance = eval(body.preadvance+"-"+body.remitted);
+    var prebalance = eval(body.preconsolidated+"-"+body.remitted);
     var consolidated = eval(body.amount+"+"+prebalance);
     var instalmentamount = eval(consolidated+"/"+body.instalments);
     var allowed = eval(body.arrears+"-"+body.notallowed);
