@@ -7,6 +7,7 @@ const productHelpers = require('../helpers/product-helpers');
 const userHelpers = require('../helpers/user-helpers');
 const printHelpers = require('../helpers/print-helpers');
 const advanceprintHelpers = require('../helpers/advanceprint-helpers');
+const teacherprintHelpers = require('../helpers/teacherprint-helpers');
 const pensionHelpers = require('../helpers/pension-helpers');
 const advanceHelpers = require('../helpers/advance-helpers');
 const arrearHelpers = require('../helpers/arrear-helpers');
@@ -219,7 +220,7 @@ router.get('/delete-advance/:id', (req, res) => {
   let advanceId = req.params.id
   var collectname = collection.ADVANCE_COLLECTION;
   console.log(advanceId);
-  pensionHelpers.deleteItem(advanceId,collectname).then((response) => {
+  advanceHelpers.deleteItem(advanceId,collectname).then((response) => {
     res.redirect('/view-advance')
   })
 })
@@ -235,7 +236,7 @@ router.post('/edit-advance/:id', async (req, res) => {
   var page = `../files/advance.docx`;
   var collectname = collection.ADVANCE_COLLECTION;
   await advanceHelpers.updateItem(req.params.id,req.body,collectname).then(() => {
-    printHelpers.printWork(req.body,page,res);
+    advanceprintHelpers.printWork(req.body,page,res);
   })
 })
 
@@ -249,9 +250,9 @@ router.get('/add-teacher', function (req, res, next) {
 router.post('/add-teacher', (req, res) => {
   var page = `../files/teacherapproval.docx`;
   var collectname = collection.TEACHER_COLLECTION;
-  advanceHelpers.addItem(req.body,collectname,(id) => {
-    printHelpers.printWork(req.body,page,res);
-  });
+  
+    teacherprintHelpers.printWork(req.body,page,res);
+  
 });
 
 

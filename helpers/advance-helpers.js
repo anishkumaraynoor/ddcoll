@@ -64,8 +64,10 @@ module.exports={
                     instalments:itemDetails.instalments,
                     lrno:itemDetails.lrno,
                     lrdate:itemDetails.lrdate,
-                    treasury:itemDetails.treasury,
-                    lastmonth: itemDetails.lastmonth
+                    totaladvance: itemDetails.totaladvance,
+                    lastmonth: itemDetails.lastmonth,
+                    treasury: itemDetails.treasury
+                    
 
                 }
             }).then((response)=>{

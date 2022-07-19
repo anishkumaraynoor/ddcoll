@@ -14,7 +14,7 @@ module.exports = {
     var consolidated = eval(body.amount+"+"+prebalance);
     var instalmentamount = eval(consolidated+"/"+body.instalments);
     var allowed = eval(body.arrears+"-"+body.notallowed);
-    var total = eval(body.credit+"+"+body.subscription+"+"+body.refund+"+"+allowed+"-"+body.preadvance);
+    var total = eval(body.credit+"+"+body.subscription+"+"+body.refund+"+"+allowed+"-"+body.totaladvance);
     var permissible = eval(total+"*"+3+"-"+prebalance)/4;
     var repayment = "being repaid";
     if (prebalance == 0){
@@ -131,7 +131,8 @@ module.exports = {
       permissible:permissible,
       repayment:repayment,
       lastmonth: body.lastmonth,
-      firstmonth: firstmonth
+      firstmonth: firstmonth,
+      totaladvance: body.totaladvance
 
 
     });
