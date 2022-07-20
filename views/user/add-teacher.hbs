@@ -68,36 +68,22 @@
                         </div>
                         <div class="form-group row">
                             <label for="" class="col-sm-2 col-form-label">Workload</label>
-                            <div class="col-sm-3">
+                            <div class="col-sm-2">
                                 <input type="text" class="form-control" id="" name="workload">
                             </div>
-                            <label for="" class="col-sm-4 col-form-label">Sanctioned Posts</label>
-                            <div class="col-sm-3">
+                            <label for="" class="col-sm-2 col-form-label">Posts</label>
+                            <div class="col-sm-2">
                                 <input type="text" class="form-control" id="" name="sanctioned">
                             </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="" class="col-sm-4 col-form-label">No. of Other TS</label>
+                            <label for="" class="col-sm-2 col-form-label">Others</label>
                             <div class="col-sm-2">
                                 <input type="text" class="form-control" id="" name="others">
                             </div>
-                            <label for="" class="col-sm-4 col-form-label">Workload of Other TS</label>
-                            <div class="col-sm-2">
-                                <input type="text" class="form-control" id="" name="othersworkload">
-                            </div>
                         </div>
 
-                        <div class="form-group row">
-                            <label for="" class="col-sm-4 col-form-label">Balance Workload</label>
-                            <div class="col-sm-2">
-                                <input type="text" class="form-control" id="" name="balanceworkload">
-                            </div>
-                            <label for="" class="col-sm-4 col-form-label">Vacancy of TS</label>
-                            <div class="col-sm-2">
-                                <input type="text" class="form-control" id="" name="balanceteachers">
-                            </div>
-                        </div>
+                        
+
+                        
                         <div class="form-group row">
                             <label for="" class="col-sm-4 col-form-label">Nature of Vacancy</label>
                             <div class="col-sm-8">
@@ -222,17 +208,17 @@
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="ചെയര്‍മാന്‍" id="flexCheckDefault" name="chairman">
+                            <input class="form-check-input" type="checkbox" value=" ചെയര്‍മാന്‍" id="flexCheckDefault" name="member">
                             <label class="form-check-label col-sm-3" for="flexCheckDefault">Chairman</label>
-                            <input class="form-check-input" type="checkbox" value="സര്‍ക്കാര്‍ നോമിനി" id="flexCheckDefault" name="govtnominee">
+                            <input class="form-check-input" type="checkbox" value=" സര്‍ക്കാര്‍ നോമിനി" id="flexCheckDefault" name="member">
                             <label class="form-check-label col-sm-4" for="flexCheckDefault">Govt. Nominee</label>
-                            <input class="form-check-input" type="checkbox" value="സബ്ജക്റ്റ് എക്സ്പെര്‍ട്ട്" id="flexCheckDefault" name="subjectexpert">
+                            <input class="form-check-input" type="checkbox" value=" സബ്ജക്റ്റ് എക്സ്പെര്‍ട്ട്" id="flexCheckDefault" name="member">
                             <label class="form-check-label col-sm-4" for="flexCheckDefault">Subject Expert</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="മാനേജ്മെന്റ് നോമിനി" id="flexCheckDefault" name="managementnominee">
+                            <input class="form-check-input" type="checkbox" value=" മാനേജ്മെന്റ് നോമിനി" id="flexCheckDefault" name="member">
                             <label class="form-check-label col-sm-7" for="flexCheckDefault">Management Nominee</label>
-                            <input class="form-check-input" type="checkbox" value="പ്രിന്‍സിപ്പാള്‍" id="flexCheckDefault" name="principal">
+                            <input class="form-check-input" type="checkbox" value=" പ്രിന്‍സിപ്പാള്‍" id="flexCheckDefault" name="member">
                             <label class="form-check-label col-sm-4" for="flexCheckDefault">Principal</label>
                         </div>
 
@@ -280,45 +266,70 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="" class="col-sm-2 col-form-label">CU Lr No</label>
-                            <div class="col-sm-4">
+                            <label for="" class="col-sm-5 col-form-label">Manager Undertaking</label>
+                            <div class="col-sm-7">
+                                <select class="form-control" id="exampleFormControlSelect1" name="mundertaking">
+                                <option>സമര്‍പ്പിച്ചിട്ടുണ്ട്</option>
+                                <option>സമര്‍പ്പിച്ചിട്ടില്ല</option>
+                                </select>
+                            </div>  
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-sm-5 col-form-label">Candidate Undertaking</label>
+                            <div class="col-sm-7">
+                                <select class="form-control" id="exampleFormControlSelect1" name="cundertaking">
+                                <option>സമര്‍പ്പിച്ചിട്ടുണ്ട്</option>
+                                <option>സമര്‍പ്പിച്ചിട്ടില്ല</option>
+                                </select>
+                            </div>  
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-3 col-form-label">CU Lr No</label>
+                            <div class="col-sm-3">
                                 <input type="text" class="form-control" id="" name="universitylrno">
                             </div>
-                            <label for="" class="col-sm-2 col-form-label">CU Lr Date</label>
-                            <div class="col-sm-4">
+                            <label for="" class="col-sm-3 col-form-label">CU Lr Date</label>
+                            <div class="col-sm-3">
                                 <input type="text" class="form-control" id="" name="universitylrdate">
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <label for="" class="col-sm-2 col-form-label">Manager Lr No</label>
-                            <div class="col-sm-4">
+                            <label for="" class="col-sm-3 col-form-label">Manager Lr No</label>
+                            <div class="col-sm-3">
                                 <input type="text" class="form-control" id="" name="managerlrno">
                             </div>
-                            <label for="" class="col-sm-2 col-form-label">Manager Lr Date</label>
-                            <div class="col-sm-4">
+                            <label for="" class="col-sm-3 col-form-label">Manag Lr Date</label>
+                            <div class="col-sm-3">
                                 <input type="text" class="form-control" id="" name="managerlrdate">
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <label for="" class="col-sm-2 col-form-label">Lr No</label>
-                            <div class="col-sm-4">
+                            <label for="" class="col-sm-3 col-form-label">Prl Lr No</label>
+                            <div class="col-sm-3">
                                 <input type="text" class="form-control" id="" name="lrno">
                             </div>
-                            <label for="" class="col-sm-2 col-form-label">Lr Date</label>
-                            <div class="col-sm-4">
+                            <label for="" class="col-sm-3 col-form-label">Prl Lr Date</label>
+                            <div class="col-sm-3">
                                 <input type="text" class="form-control" id="" name="lrdate">
                             </div>
                         </div>
 
-                        <a onclick="Add()" class="btn btn-success" id="">OK</a>
+                        <a onclick="Add()" class="btn btn-success" id="btn">OK</a>
                         <button type="submit" class="btn btn-primary" >SAVE</button>
 
                         <div class="form-group row invisible">
                             <label for="" class="col-sm-5 col-form-label">Treasury</label>
                             <div class="col-sm-7">
                                 <input type="text" class="form-control" id="treasury" name="treasury">
+                            </div>
+                        </div>
+                         <div class="form-group row invisible">
+                            <label for="" class="col-sm-5 col-form-label">Members</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control" id="members" name="members">
                             </div>
                         </div>
                         
@@ -328,9 +339,16 @@
         </div>
     </section>
     <script>
-        function Add(){
-            
-        }
+        
+        const btn = document.querySelector('#btn');
+        btn.addEventListener('click', (event) => {
+            let checkboxes = document.querySelectorAll('input[name="member"]:checked');
+            let values = [];
+            checkboxes.forEach((checkbox) => {
+                values.push(checkbox.value);
+            });
+            document.form.members.value = String(values);
+        });    
           
     </script>
    

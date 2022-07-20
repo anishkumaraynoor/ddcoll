@@ -10,12 +10,9 @@ var b = ['', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eigh
 
 module.exports = {
   printWork: (body, pagename, res) => {
-    var staff = body.staff;
-    if (staff === "TS") {
-      stafffull = "Teaching Staff";
-    } else {
-      stafffull = "Non Teaching Staff";
-    }
+    var othersworkload = body.others * 16;
+    var balanceworkload = body.workload - othersworkload;
+    var balanceteachers = (balanceworkload - balanceworkload % 16) / 16;
     var dat = body.date;
     var date = moment(dat, "YYYY/MM/DD").format("DD/MM/YYYY")
 
@@ -83,10 +80,11 @@ module.exports = {
       birthdate: body.birthdate,
       workload: body.workload,
       joindate: body.joindate,
+      sanctioned: body.sanctioned,
       others: body.others,
-      othersworkload: body.othersworkload,
-      balanceworkload: body.balanceworkload,
-      balanceteachers: body.balanceteachers,
+      othersworkload: othersworkload,
+      balanceworkload: balanceworkload,
+      balanceteachers: balanceteachers,
       vacancynature: body.vacancynature,
       papervacancy: body.papervacancy,
       govtlrno: body.govtlrno,
@@ -103,7 +101,18 @@ module.exports = {
       management: body.management,
       excessreport: body.excessreport,
       managerlrno: body.managerlrno,
-      managerlrdate: body.managerlrdate
+      managerlrdate: body.managerlrdate,
+      paper1: body.paper1,
+      paper2:body.paper2,
+      paper3:body.paper3,
+      paper4:body.paper4,
+      paperdate1:body.paperdate1,
+      paperdate2:body.paperdate2,
+      paperdate3:body.paperdate3,
+      paperdate4:body.paperdate4,
+      members: body.members,
+      mundertaking: body.mundertaking,
+      cundertaking: body.cundertaking
 
 
     });
