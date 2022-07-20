@@ -40,6 +40,7 @@ module.exports={
             db.get().collection(collectname).
             updateOne({_id:objectId(itemId)},{
                 $set:{
+                    billno: itemDetails.billno,
                     fileno:itemDetails.fileno,
                     date:itemDetails.date,
                     staff:itemDetails.staff,
@@ -54,7 +55,17 @@ module.exports={
                     joining:itemDetails.joining,
                     retirement:itemDetails.retirement,
                     treasury:itemDetails.treasury,
-                    staffname:itemDetails.staffname
+                    staffname:itemDetails.staffname,
+                    period:itemDetails.period,
+                    net:itemDetails.net,
+                    pay:itemDetails.pay,
+                    da:itemDetails.da,
+                    hra:itemDetails.hra,
+                    cca:itemDetails.cca,
+                    splallow:itemDetails.splallow,
+                    splls:itemDetails.splls,
+                    gross:itemDetails.gross,
+                    account:itemDetails.account
 
                 }
             }).then((response)=>{

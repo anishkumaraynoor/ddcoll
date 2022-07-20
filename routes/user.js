@@ -116,12 +116,16 @@ router.get('/view-forms', function (req, res, next) {
   var collectname = collection.FORM_COLLECTION;
   pensionHelpers.getAllItems(collectname).then((forms) => {
     var totalgross = 0;
-    for (var i = 0; i < forms.length; i++){
-      totalgross = eval(totalgross + "+" + forms[i].gross);
+    for(i=0;i<forms.length;i++){
+      totalgross = totalgross + eval(forms[i].gross)
     }
-    res.render('user/view-forms', { forms, totalgross, user });
+    
+    res.render('user/view-forms', {totalgross, forms, user });
   })
 });
+
+
+
 router.get('/delete-form/:id', (req, res) => {
   let formId = req.params.id
   var collectname = collection.FORM_COLLECTION;
