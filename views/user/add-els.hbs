@@ -1,7 +1,7 @@
-    <section>
-        <div class="container">
-        
-            <div class="row mt-4">
+<section>
+    <div class="container">
+
+        <div class="row mt-4">
 
 
 
@@ -49,7 +49,7 @@
                                 <input type="text" class="form-control" id="cml" name="cml">
                             </div>
                         </div>
-                        
+
                         <div class="form-group row">
                             <label for="" class="col-sm-2 col-form-label">EL</label>
                             <div class="col-sm-4">
@@ -76,64 +76,61 @@
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" id="cb" name="cb">
                             </div>
-                        </div>                     
+                        </div>
 
-                        
+
 
                     </form>
                 </div>
             </div>
         </div>
-    </section>
-    <script>
-        function Add(){
-            var datef = document.form.from.value;
-            var datet = document.form.to.value;
-            var fdate = new Date(datef);
-            var tdate = new Date(datet);
+</section>
+<script>
+    function Add() {
+        var datef = document.form.from.value;
+        var datet = document.form.to.value;
+        var fdate = new Date(datef);
+        var tdate = new Date(datet);
 
-            var time_difference = tdate.getTime() - fdate.getTime();
-            var days = time_difference / (1000 * 60 * 60 * 24);
-            
-
-            var hpl = document.form.hpl.value;
-            if(!hpl){hpl = 0;}
-            var cml = document.form.cml.value;
-            if(!cml){cml = 0;}
-            var el = document.form.el.value;
-            if(!el){el = 0;}
-            var lwa = document.form.lwa.value;
-            if(!lwa){lwa = 0;}
-            var sur = document.form.sur.value;
-            if(!sur){sur = 0;}
-
-            var leave = eval(hpl+"+"+cml+"+"+el+"+"+lwa);
-            
-            var debit = eval(el+"+"+sur);
-            
-            
-            var duty = days+1-leave;
-            
-
-            var obfull = document.form.obfull.value;
-            if(!obfull){obfull = 0;}
-            var fraction = document.form.fraction.value;
-            if(!fraction){fraction = 0;}
-
-            var obdays = eval(obfull*11+"+"+fraction);
-            var cbdays = duty+obdays-debit*11;
-            var cbfull = (cbdays-cbdays%11)/11;
-            var cbf = cbdays%11;
-
-            var cb = cbfull+"  "+cbf+"/11";
-            document.form.cb.value = cb;
+        var time_difference = tdate.getTime() - fdate.getTime();
+        var days = time_difference / (1000 * 60 * 60 * 24);
 
 
+        var hpl = document.form.hpl.value;
+        if (!hpl) { hpl = 0; }
+        var cml = document.form.cml.value;
+        if (!cml) { cml = 0; }
+        var el = document.form.el.value;
+        if (!el) { el = 0; }
+        var lwa = document.form.lwa.value;
+        if (!lwa) { lwa = 0; }
+        var sur = document.form.sur.value;
+        if (!sur) { sur = 0; }
+
+        var leave = eval(hpl + "+" + cml + "+" + el + "+" + lwa);
+
+        var debit = eval(el + "+" + sur);
 
 
-        }
-          
-    </script>
-   
+        var duty = days + 1 - leave;
 
-    
+
+        var obfull = document.form.obfull.value;
+        if (!obfull) { obfull = 0; }
+        var fraction = document.form.fraction.value;
+        if (!fraction) { fraction = 0; }
+
+        var obdays = eval(obfull * 11 + "+" + fraction);
+        var cbdays = duty + obdays - debit * 11;
+        var cbfull = (cbdays - cbdays % 11) / 11;
+        var cbf = cbdays % 11;
+
+        var cb = cbfull + "  " + cbf + "/11";
+        document.form.cb.value = cb;
+
+
+
+
+    }
+
+</script>

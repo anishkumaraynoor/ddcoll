@@ -14,6 +14,7 @@ const arrearHelpers = require('../helpers/arrear-helpers');
 const ntsarrearHelpers = require('../helpers/ntsarrear-helpers');
 const arrearsHelpers = require('../helpers/arrears-helpers')
 const elsHelpers = require('../helpers/els-helpers')
+const cashbookHelpers = require('../helpers/cashbook-helpers')
 var router = express.Router();
 
 /* GET home page. */
@@ -270,6 +271,63 @@ router.get('/add-complex', function (req, res, next) {
   res.render('user/add-complex', { user });
 })
 
+router.get('/add-cashbook', function (req, res, next) {
+  let user = req.session.user;
+  var collectname = collection.CASHBOOK_COLLECTION;
+  cashbookHelpers.getAllItems(collectname).then((cashbook) => {
+    if(cashbook.length == 0){
+      var precash = 0;
+      var prebank = 0;
+    }else{
+      precash = cashbook[cashbook.length-1].cashinhand;
+      prebank = cashbook[cashbook.length-1].bankbalance;
+    }
+    
+    res.render('user/add-cashbook', { precash, prebank, user });
+})
+})
+
+router.post('/add-cashbook', (req, res) => {
+  var collectname = collection.CASHBOOK_COLLECTION;
+  cashbookHelpers.addItem(req.body,collectname,(id) => {
+      res.redirect('add-cashbook');
+  });
+});
+
+router.get('/view-cashbook', (req, res) => {
+  var collectname = collection.CASHBOOK_COLLECTION;
+    cashbookHelpers.getAllItems(collectname).then((cashbook) => {
+      res.render('user/view-cashbook', {cashbook});
+    })
+  
+});
+
+
+
+router.get('/delete-cashbook/:id', (req, res) => {
+  let cashbookId = req.params.id
+  var collectname = collection.CASHBOOK_COLLECTION;
+  console.log(cashbookId);
+  cashbookHelpers.deleteItem(cashbookId,collectname).then((response) => {
+    res.redirect('/view-cashbook')
+  })
+})
+
+router.get('/edit-cashbook/:id', async (req, res) => {
+  let user = req.session.user;
+  var collectname = collection.CASHBOOK_COLLECTION;
+  let cashbook = await cashbookHelpers.getItemDetails(req.params.id,collectname);
+  console.log(cashbook);
+  res.render('user/edit-cashbook', { cashbook, user })
+})
+
+router.post('/edit-cashbook/:id', async (req, res) => {
+  var collectname = collection.CASHBOOK_COLLECTION;
+  await cashbookHelpers.updateItem(req.params.id,req.body,collectname).then(() => {
+    res.redirect('/view-cashbook')
+  })
+})
+
 router.get('/add-ugcpr', function (req, res, next) {
   let user = req.session.user;
   res.render('user/add-ugcpr', { user });
@@ -309,6 +367,12 @@ router.post('/view-els', (req, res) => {
     res.render('user/view-els',{elsdata});
   })
 });
+
+
+
+
+
+
 
 
 router.post('/view-ntsarrear', (req, res) => {

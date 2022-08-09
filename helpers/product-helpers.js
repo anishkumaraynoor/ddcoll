@@ -43,7 +43,8 @@ module.exports={
             updateOne({_id:objectId(collId)},{
                 $set:{
                     college:collDetails.college,
-                    treasury:collDetails.treasury
+                    treasury:collDetails.treasury,
+                    malayalam:collDetails.malayalam
                 }
             }).then((response)=>{
                 resolve()

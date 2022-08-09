@@ -1,0 +1,90 @@
+    <section>
+        <div class="container">
+        
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-md-6">
+                    <form action="/edit-cashbook/{{cashbook._id}}" method="POST" name="form">
+
+                        <div class="form-group row">
+                            <label for="colFormLabel" class="col-sm-2 col-form-label">Date</label>
+                            <div class="col-sm-4">
+                                <input type="date" class="form-control" id="colFormLabel" placeholder="" name="date" value="{{cashbook.date}}">
+                            </div> 
+                            <label for="" class="col-sm-3 col-form-label">OP</label>
+                            <input type="text" class="col-sm-3 form-control" id="op" name="op" value="{{cashbook.op}}">                         
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">Admission</label>
+                            <input type="text" class="col-sm-2 form-control" id="admission" name="admission" value="{{cashbook.admission}}">
+                            <label for="" class="col-sm-2 col-form-label">Rent</label>
+                            <input type="text" class="col-sm-2 form-control" id="rent" name="rent" value="{{cashbook.rent}}">
+                            <label for="" class="col-sm-2 col-form-label">Donation</label>
+                            <input type="text" class="col-sm-2 form-control" id="donation" name="donation" value="{{cashbook.donation}}">
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">Gas</label>
+                            <input type="text" class="col-sm-2 form-control" id="gas" name="gas" value="{{cashbook.gas}}">
+                            <label for="" class="col-sm-2 col-form-label">Lab</label>
+                            <input type="text" class="col-sm-2 form-control" id="lab" name="lab" value="{{cashbook.lab}}">
+                            <label for="" class="col-sm-2 col-form-label">Advance</label>
+                            <input type="text" class="col-sm-2 form-control" id="advance" name="advance" value="{{cashbook.advance}}">
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">Withdrawal</label>
+                            <input type="text" class="col-sm-2 form-control" id="withdrawal" name="withdrawal" value="{{cashbook.withdrawal}}">
+                            <label for="" class="col-sm-2 col-form-label">Expense</label>
+                            <input type="text" class="col-sm-2 form-control" id="expense" name="expense" value="{{cashbook.expense}}">
+                            <label for="" class="col-sm-2 col-form-label">Remittance</label>
+                            <input type="text" class="col-sm-2 form-control" id="remittance" name="remittance" value="{{cashbook.remittance}}">
+                        </div>
+
+                        
+                        
+
+                        <a onclick="Ok()" class="btn btn-success" id="">OK</a>
+                        <button type="submit" value="submit" class="btn btn-primary">ADD</button>
+                        <a href="/view-cashbook" class="btn btn-success ml-auto">View Cash Book</a>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-3 col-form-label">Total Collection</label>
+                            <input type="text" class="col-sm-3 form-control" id="total" name="total" value="{{cashbook.total}}">
+                            <label for="" class="col-sm-3 col-form-label">Cash in Hand</label>
+                            <input type="text" class="col-sm-3 form-control" id="cashinhand" name="cashinhand" value="{{cashbook.cashinhand}}">                            
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-3 col-form-label">Bank Balance</label>
+                            <input type="text" class="col-sm-3 form-control" id="bankbalance" name="bankbalance" value="{{cashbook.bankbalance}}">
+                            <label for="" class="col-sm-3 col-form-label">Grand Total</label>
+                            <input type="text" class="col-sm-3 form-control" id="grandtotal" name="grandtotal" value="{{cashbook.grandtotal}}">  
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">PreCash</label>
+                            <input type="text" class="col-sm-2 form-control" id="precash" name="precash" value="{{cashbook.precash}}">
+                            <label for="" class="col-sm-2 col-form-label">PreBank</label>
+                            <input type="text" class="col-sm-2 form-control" id="prebank" name="prebank" value="{{cashbook.prebank}}">  
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-sm-3 col-form-label">Cashbook Date</label>
+                            <input type="text" class="col-sm-3 form-control" id="cashbookdate" name="cashbookdate" value="{{cashbook.cashbookdate}}">
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        function Add(){
+        }
+          
+    </script>
+   
+
+    

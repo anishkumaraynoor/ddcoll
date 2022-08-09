@@ -1,0 +1,142 @@
+    <section>
+        
+        
+            
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div>
+                        <h2 class="text-center mb-4">GAH Cash Book</h2>
+                    </div>
+                    <form action="/add-cashbook" method="POST" name="form">
+                        <div class="form-group row">
+                            <label for="colFormLabel" class="col-sm-2 col-form-label">Date</label>
+                            <div class="col-sm-4">
+                                <input type="date" class="form-control" id="colFormLabel" placeholder="" name="date">
+                            </div> 
+                            <label for="" class="col-sm-3 col-form-label">OP</label>
+                            <input type="text" class="col-sm-3 form-control" id="op" name="op">                         
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">Admission</label>
+                            <input type="text" class="col-sm-2 form-control" id="admission" name="admission">
+                            <label for="" class="col-sm-2 col-form-label">Rent</label>
+                            <input type="text" class="col-sm-2 form-control" id="rent" name="rent">
+                            <label for="" class="col-sm-2 col-form-label">Donation</label>
+                            <input type="text" class="col-sm-2 form-control" id="donation" name="donation">
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">Gas</label>
+                            <input type="text" class="col-sm-2 form-control" id="gas" name="gas">
+                            <label for="" class="col-sm-2 col-form-label">Lab</label>
+                            <input type="text" class="col-sm-2 form-control" id="lab" name="lab">
+                            <label for="" class="col-sm-2 col-form-label">Advance</label>
+                            <input type="text" class="col-sm-2 form-control" id="advance" name="advance">
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">Withdrawal</label>
+                            <input type="text" class="col-sm-2 form-control" id="withdrawal" name="withdrawal">
+                            <label for="" class="col-sm-2 col-form-label">Expense</label>
+                            <input type="text" class="col-sm-2 form-control" id="expense" name="expense">
+                            <label for="" class="col-sm-2 col-form-label">Remittance</label>
+                            <input type="text" class="col-sm-2 form-control" id="remittance" name="remittance">
+                        </div>
+
+                        
+                        
+
+                        <a onclick="Ok()" class="btn btn-success" id="">OK</a>
+                        <button type="submit" value="submit" class="btn btn-primary">ADD</button>
+                        <a href="/view-cashbook" class="btn btn-success ml-auto">View Cash Book</a>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-3 col-form-label">Total Collection</label>
+                            <input type="text" class="col-sm-3 form-control" id="total" name="total">
+                            <label for="" class="col-sm-3 col-form-label">Cash in Hand</label>
+                            <input type="text" class="col-sm-3 form-control" id="cashinhand" name="cashinhand">                            
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-3 col-form-label">Bank Balance</label>
+                            <input type="text" class="col-sm-3 form-control" id="bankbalance" name="bankbalance">
+                            <label for="" class="col-sm-3 col-form-label">Grand Total</label>
+                            <input type="text" class="col-sm-3 form-control" id="grandtotal" name="grandtotal">  
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">PreCash</label>
+                            <input type="text" class="col-sm-2 form-control" id="precash" name="precash" value="{{{precash}}}">
+                            <label for="" class="col-sm-2 col-form-label">PreBank</label>
+                            <input type="text" class="col-sm-2 form-control" id="prebank" name="prebank" value="{{{prebank}}}">  
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-sm-3 col-form-label">Cashbook Date</label>
+                            <input type="text" class="col-sm-3 form-control" id="cashbookdate" name="cashbookdate">
+                        </div>
+                        
+
+
+                        
+
+                        
+                        
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function Ok(){
+            if(!document.form.date.value){alert("Please Enter Date");}else{
+            if(!document.form.op.value){document.form.op.value = 0;}
+            if(!document.form.admission.value){document.form.admission.value = 0;}
+            if(!document.form.rent.value){document.form.rent.value = 0;}
+            if(!document.form.donation.value){document.form.donation.value = 0;}
+            if(!document.form.gas.value){document.form.gas.value = 0;}
+            if(!document.form.lab.value){document.form.lab.value = 0;}
+            if(!document.form.advance.value){document.form.advance.value = 0;}
+            if(!document.form.expense.value){document.form.expense.value = 0;}
+            if(!document.form.remittance.value){document.form.remittance.value = 0;}
+            if(!document.form.withdrawal.value){document.form.withdrawal.value = 0;}
+            var op = document.form.op.value;
+            var admission = document.form.admission.value;
+            var rent = document.form.rent.value;
+            var donation = document.form.donation.value;
+            var gas = document.form.gas.value;
+            var lab = document.form.lab.value;
+            var advance = document.form.advance.value;
+            var expense = document.form.expense.value;
+            var remittance = document.form.remittance.value;
+            var precash = document.form.precash.value;
+            var prebank = document.form.prebank.value;
+            var withdrawal = document.form.withdrawal.value;
+            var total = eval(op+"+"+admission+"+"+rent+"+"+donation+"+"+gas+"+"+lab+"+"+advance);
+            document.form.total.value = total;
+            var cashinhand = eval(total+"+"+precash+"-"+expense+"-"+remittance);
+            document.form.cashinhand.value = cashinhand;
+            var bankbalance = eval(prebank+"+"+remittance+"-"+withdrawal);
+            document.form.bankbalance.value = bankbalance;
+            var grandtotal = eval(cashinhand+"+"+bankbalance);
+            document.form.grandtotal.value = grandtotal;
+            var datecash = document.form.date.value;
+            var cashdate = new Date(datecash);
+            cashdate.setDate(cashdate.getDate());
+            var ddcash = "0"+cashdate.getDate();
+            var mmcash = "0"+(cashdate.getMonth() + 1);
+            mmcash = mmcash.slice(-2);
+            ddcash = ddcash.slice(-2);
+            var yycash = cashdate.getFullYear();
+            var cashbookdate = ddcash + '-'+ mmcash + '-'+ yycash;
+            document.form.cashbookdate.value = cashbookdate;
+            }
+        }
+
+    </script>
+   
+
+    

@@ -1,0 +1,75 @@
+<section>
+   
+   
+   
+   
+   
+   
+   
+   
+        
+        <table class="table mt-5" id="datatable">
+  <thead>
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">OP</th>
+      <th scope="col">Adm</th>
+      <th scope="col">Rent</th>
+      <th scope="col">Don</th>
+      <th scope="col">Gas</th>
+      <th scope="col">Lab</th>
+      <th scope="col">Adv</th>
+      <th scope="col">Total</th>
+      <th scope="col">Withdr</th>
+      <th scope="col">Expen</th>
+      <th scope="col">Cash</th>
+      <th scope="col">Remit</th>
+      <th scope="col">Bank</th>
+      <th scope="col">Grand</th>
+      <th>Option</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    {{#each cashbook}}
+    <tr>
+      <td>{{this.cashbookdate}}</td>
+      <td>{{this.op}}</td>
+      <td>{{this.admission}}</td>
+      <td>{{this.rent}}</td>
+      <td>{{this.donation}}</td>
+      <td>{{this.gas}}</td>
+      <td>{{this.lab}}</td>
+      <td>{{this.advance}}</td>
+      <td>{{this.total}}</td>
+      <td>{{this.withdrawal}}</td>
+      <td>{{this.expense}}</td>
+      <td>{{this.cashinhand}}</td>
+      <td>{{this.remittance}}</td>
+      <td>{{this.bankbalance}}</td>
+      <td>{{this.grandtotal}}</td>
+      <td>
+        <a href="/edit-cashbook/{{this._id}}" class="btn btn-primary">Edit</a>
+        <a href="/delete-cashbook/{{this._id}}" class="btn btn-danger" onclick="return confirm('Are you sure to delete {{this.grandtotal}}?')">Delete</a>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+   
+</section>
+<script>
+  $(document).ready( function () {
+    $('#datatable').DataTable();
+  } );
+</script>
+
+<style>
+  body {
+    counter-reset: Count-Value;
+  }
+
+  table {
+    border-collapse: separate;
+  }
+</style>
