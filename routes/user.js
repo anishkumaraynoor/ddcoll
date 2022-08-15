@@ -7,9 +7,11 @@ const productHelpers = require('../helpers/product-helpers');
 const userHelpers = require('../helpers/user-helpers');
 const printHelpers = require('../helpers/print-helpers');
 const advanceprintHelpers = require('../helpers/advanceprint-helpers');
+const closureprintHelpers = require('../helpers/closureprint-helpers');
 const teacherprintHelpers = require('../helpers/teacherprint-helpers');
 const pensionHelpers = require('../helpers/pension-helpers');
 const advanceHelpers = require('../helpers/advance-helpers');
+const closureHelpers = require('../helpers/closure-helpers');
 const arrearHelpers = require('../helpers/arrear-helpers');
 const ntsarrearHelpers = require('../helpers/ntsarrear-helpers');
 const arrearsHelpers = require('../helpers/arrears-helpers')
@@ -242,6 +244,53 @@ router.post('/edit-advance/:id', async (req, res) => {
   var collectname = collection.ADVANCE_COLLECTION;
   await advanceHelpers.updateItem(req.params.id,req.body,collectname).then(() => {
     advanceprintHelpers.printWork(req.body,page,res);
+  })
+})
+
+router.get('/add-closure', function (req, res, next) {
+  let user = req.session.user;
+  productHelpers.getAllColleges().then((colleges) => {  
+      res.render('user/add-closure', { colleges, user });
+  })
+})
+
+router.post('/add-closure', (req, res) => {
+  var page = `../files/closure.docx`;
+  var collectname = collection.CLOSURE_COLLECTION;
+  closureHelpers.addItem(req.body,collectname,(id) => {
+    closureprintHelpers.printWork(req.body,page,res);
+  });
+});
+
+router.get('/view-closure', function (req, res, next) {
+  let user = req.session.user;
+  var collectname = collection.CLOSURE_COLLECTION;
+  closureHelpers.getAllItems(collectname).then((closure) => {
+    res.render('user/view-closure', { closure, user });
+  })
+});
+
+router.get('/delete-closure/:id', (req, res) => {
+  let closureId = req.params.id
+  var collectname = collection.CLOSURE_COLLECTION;
+  console.log(closureId);
+  closureHelpers.deleteItem(closureId,collectname).then((response) => {
+    res.redirect('/view-closure')
+  })
+})
+router.get('/edit-closure/:id', async (req, res) => {
+  let user = req.session.user;
+  var collectname = collection.CLOSURE_COLLECTION;
+  let closure = await closureHelpers.getItemDetails(req.params.id,collectname);
+  console.log(closure);
+  res.render('user/edit-closure', { closure, user })
+})
+
+router.post('/edit-closure/:id', async (req, res) => {
+  var page = `../files/closure.docx`;
+  var collectname = collection.CLOSURE_COLLECTION;
+  await closureHelpers.updateItem(req.params.id,req.body,collectname).then(() => {
+    closureprintHelpers.printWork(req.body,page,res);
   })
 })
 

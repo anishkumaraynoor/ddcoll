@@ -1,8 +1,22 @@
+
+
+
+
+
+
+
+
+
+
+'use strict';
 const { PDFNet } = require('@pdftron/pdfnet-node');
 var PizZip = require('pizzip');
 var Docxtemplater = require('docxtemplater');
 const path = require('path');
 const fs = require('fs');
+const fsn = fs.promises;
+const libre = require('libreoffice-convert');
+libre.convertAsync = require('util').promisify(libre.convert);
 var moment = require('moment');
 
 var a = ['', 'one ', 'two ', 'three ', 'four ', 'five ', 'six ', 'seven ', 'eight ', 'nine ', 'ten ', 'eleven ', 'twelve ', 'thirteen ', 'fourteen ', 'fifteen ', 'sixteen ', 'seventeen ', 'eighteen ', 'nineteen '];
@@ -11,10 +25,9 @@ var b = ['', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eigh
 module.exports = {
   printWork: (body, pagename, res) => {
     var staff = body.staff;
+    var stafffull = "Non Teaching Staff";
     if (staff === "TS") {
       stafffull = "Teaching Staff";
-    } else {
-      stafffull = "Non Teaching Staff";
     }
     var dat = body.date;
     var date = moment(dat, "YYYY/MM/DD").format("DD/MM/YYYY")
@@ -107,15 +120,20 @@ module.exports = {
 
     var buf = doc.getZip().generate({ type: 'nodebuffer' });
     fs.writeFileSync(path.resolve(__dirname, `../files/letterreplace.docx`), buf);
-    const inputPath = path.resolve(__dirname, `../files/letterreplace.docx`);
-    const outputPath = path.resolve(__dirname, `../files/letter.pdf`);
-    const convertToPdf = async () => {
-      const pdfdoc = await PDFNet.PDFDoc.create();
-      await pdfdoc.initSecurityHandler();
-      await PDFNet.Convert.toPdf(pdfdoc, inputPath);
-      pdfdoc.save(outputPath, PDFNet.SDFDoc.SaveOptions.e_linearized);
-    }
-    PDFNet.runWithCleanup(convertToPdf).then(() => {
+
+    async function main() {
+      const ext = '.pdf'
+      const inputPath = path.join(__dirname, `../files/letterreplace.docx`);
+      const outputPath = path.join(__dirname, `../files/letter.pdf`);
+  
+      // Read file
+      const docxBuf = await fsn.readFile(inputPath);
+  
+      // Convert it to pdf format with undefined filter (see Libreoffice docs about filter)
+      let pdfBuf = await libre.convertAsync(docxBuf, ext, undefined);
+      
+      // Here in done you have pdf file which you can save or transfer in another stream
+      await fsn.writeFile(outputPath, pdfBuf); 
       fs.readFile(outputPath, (err, data) => {
         if (err) {
           res.statusCode = 500;
@@ -125,9 +143,16 @@ module.exports = {
           res.end(data);
         }
       })
-    }).catch(err => {
-      res.statusCode = 500;
-      res.end(err);
-    })
+
   }
+  
+  main().catch(function (err) {
+      console.log(`Error converting file: ${err}`);
+  });
+  
+  
+  
+    
+  }
+  
 }

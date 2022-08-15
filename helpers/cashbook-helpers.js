@@ -66,5 +66,39 @@ module.exports={
                 resolve()
             })
         })
+    },
+
+    cashbookWork: (cashbook) => {
+        
+        var bookcash = Array();
+       
+        for (j=0; j<cashbook.length; j++) {
+
+
+            bookcash [j] = 
+                {
+                    op: cashbook[j].op,
+                    admission: cashbook[j].admission,
+                    rent: cashbook[j].rent[j],
+                    donation: cashbook[j].donation,
+                    gas: cashbook[j].gas,
+                    lab: cashbook[j].lab,
+                    advance: cashbook[j].advance,
+                    withdrawal: cashbook[j].withdrawa,
+                    expense: cashbook[j].expense,
+                    remittance: cashbook[j].remittance
+                }
+                    
+        }
+
+        
+        return new Promise(async (resolve, reject) => {
+           
+            resolve(cashbook)
+            
+        }) 
+          
+        
     }
+
 }

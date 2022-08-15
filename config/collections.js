@@ -11,6 +11,7 @@ module.exports={
     FORM_COLLECTION:'form',
     PENSION_COLLECTION:'pension',
     ADVANCE_COLLECTION: 'advance',
+    CLOSURE_COLLECTION: 'closure',
     TEACHER_COLLECTION: 'teacher',
     CASHBOOK_COLLECTION: 'cashbook'
 }

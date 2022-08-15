@@ -1,0 +1,140 @@
+
+
+
+
+
+
+
+
+
+    
+    <section>
+        
+        <div class="container">
+        <div class="row mt-4">
+            <a href="/view-closure" class="btn btn-success ml-auto">View Closure</a>
+        </div>
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-md-6">
+                    <form action="/add-closure" method="POST" name="form">
+
+                        <div class="form-group row">
+                            <label for="colFormLabel" class="col-sm-2 col-form-label">File No.</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="colFormLabel" placeholder="" name="fileno">
+                            </div>
+                            <label for="colFormLabel" class="col-sm-2 col-form-label">Date</label>
+                            <div class="col-sm-4">
+                                <input type="date" class="form-control" id="colFormLabel" placeholder="" name="date">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="colFormLabel" class="col-sm-2 col-form-label">College</label>
+                            <div class="col-sm-10">
+                                <select class="form-control" id="college" name="college">
+                                {{#each colleges}}
+                                <option id="{{this.malayalam}}" value="{{this.college}}">{{this.college}}</option>
+                                {{/each}}
+                            </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">Name</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="" name="name">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">Designation</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="" name="designation">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">Credit</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="" name="credit">
+                            </div>
+                            <label for="" class="col-sm-4 col-form-label">Subscription+Loan</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="" name="subloan">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">Arrears</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="" name="arrears">
+                            </div>
+                            <label for="" class="col-sm-4 col-form-label">Loan after Card</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="" name="loan">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">CreditCard</label>
+                            <div class="col-sm-3">
+                                <select class="form-control" id="exampleFormControlSelect1" name="ccyear">
+                                <option>2015-16</option>
+                                <option>2016-17</option>
+                                <option>2017-18</option>
+                                <option>2018-19</option>
+                                <option>2019-20</option>
+                                <option>2020-21</option>
+                                <option>2021-22</option>
+                            </select>
+                            </div>
+                            <label for="" class="col-sm-4 col-form-label">Retirement Date</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="" name="retirement">
+                            </div>
+                            
+                        </div>
+
+
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">Lr No</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="" name="lrno">
+                            </div>
+                            <label for="" class="col-sm-2 col-form-label">Lr Date</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="" name="lrdate">
+                            </div>
+                        </div>
+
+                        <a onclick="Add()" class="btn btn-success" id="">OK</a>
+                        <button type="submit" onclick="Add()" class="btn btn-primary" >SAVE</button>
+                        
+                        <div class="form-group row invisible">
+                            <label for="" class="col-sm-5 col-form-label">Malayalam</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control" id="malayalam" name="malayalam">
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        function Add(){
+            var collsel = document.getElementById('college');
+            var collegeid = collsel.options[collsel.selectedIndex].id;
+            document.form.malayalam.value = collegeid;
+            if(!document.form.credit.value){document.form.credit.value = 0;}
+            if(!document.form.subloan.value){document.form.subloan.value = 0;}
+            if(!document.form.arrears.value){document.form.arrears.value = 0;}
+            if(!document.form.loan.value){document.form.loan.value = 0;}
+        }
+          
+    </script>
+   
+
+    
